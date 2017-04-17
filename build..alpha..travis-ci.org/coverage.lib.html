@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-markdown/markdown/lib/markdown.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-markdown/node_modules/markdown/lib/markdown.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-markdown">npmtest-markdown (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-markdown/markdown/lib/markdown.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-markdown/node_modules/markdown/lib/markdown.js</span></h1>
     <h2>
         
         Statements: <span class="metric">12.1% <small>(87 / 719)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-markdown/markdown/lib/</a> » markdown.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-markdown/node_modules/markdown/lib/</a> &#187; markdown.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -3700,26 +3702,26 @@
  *
  *  [JsonML]: http://jsonml.org/ "JSON Markup Language"
  **/
-var Markdown = expose.Markdown = <span class="fstat-no" title="function not covered">function(dialect) {</span>
-<span class="cstat-no" title="statement not covered">  switch (typeof dialect) {</span>
+var Markdown = expose.Markdown = <span class="fstat-no" title="function not covered" >function(dialect) {</span>
+<span class="cstat-no" title="statement not covered" >  switch (typeof dialect) {</span>
     case "undefined":
-<span class="cstat-no" title="statement not covered">      this.dialect = Markdown.dialects.Gruber;</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      this.dialect = Markdown.dialects.Gruber;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "object":
-<span class="cstat-no" title="statement not covered">      this.dialect = dialect;</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      this.dialect = dialect;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     default:
-<span class="cstat-no" title="statement not covered">      if ( dialect in Markdown.dialects ) {</span>
-<span class="cstat-no" title="statement not covered">        this.dialect = Markdown.dialects[dialect];</span>
+<span class="cstat-no" title="statement not covered" >      if ( dialect in Markdown.dialects ) {</span>
+<span class="cstat-no" title="statement not covered" >        this.dialect = Markdown.dialects[dialect];</span>
       }
       else {
-<span class="cstat-no" title="statement not covered">        throw new Error("Unknown Markdown dialect '" + String(dialect) + "'");</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Unknown Markdown dialect '" + String(dialect) + "'");</span>
       }
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
   }
-<span class="cstat-no" title="statement not covered">  this.em_state = [];</span>
-<span class="cstat-no" title="statement not covered">  this.strong_state = [];</span>
-<span class="cstat-no" title="statement not covered">  this.debug_indent = "";</span>
+<span class="cstat-no" title="statement not covered" >  this.em_state = [];</span>
+<span class="cstat-no" title="statement not covered" >  this.strong_state = [];</span>
+<span class="cstat-no" title="statement not covered" >  this.debug_indent = "";</span>
 };
 &nbsp;
 /**
@@ -3729,10 +3731,10 @@ var Markdown = expose.Markdown = <span class="fstat-no" title="function not cove
  *
  *  Parse `markdown` and return a markdown document as a Markdown.JsonML tree.
  **/
-expose.parse = <span class="fstat-no" title="function not covered">function( source, dialect ) {</span>
+expose.parse = <span class="fstat-no" title="function not covered" >function( source, dialect ) {</span>
   // dialect will default if undefined
-<span class="cstat-no" title="statement not covered">  var md = new Markdown( dialect );</span>
-<span class="cstat-no" title="statement not covered">  return md.toTree( source );</span>
+<span class="cstat-no" title="statement not covered" >  var md = new Markdown( dialect );</span>
+<span class="cstat-no" title="statement not covered" >  return md.toTree( source );</span>
 };
 &nbsp;
 /**
@@ -3744,10 +3746,10 @@ expose.parse = <span class="fstat-no" title="function not covered">function( sou
  *  Take markdown (either as a string or as a JsonML tree) and run it through
  *  [[toHTMLTree]] then turn it into a well-formated HTML fragment.
  **/
-expose.toHTML = <span class="fstat-no" title="function not covered">function toHTML( source , dialect , options ) {</span>
-<span class="cstat-no" title="statement not covered">  var input = expose.toHTMLTree( source , dialect , options );</span>
+expose.toHTML = <span class="fstat-no" title="function not covered" >function toHTML( source , dialect , options ) {</span>
+<span class="cstat-no" title="statement not covered" >  var input = expose.toHTMLTree( source , dialect , options );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return expose.renderJsonML( input );</span>
+<span class="cstat-no" title="statement not covered" >  return expose.renderJsonML( input );</span>
 };
 &nbsp;
 /**
@@ -3761,28 +3763,28 @@ expose.toHTML = <span class="fstat-no" title="function not covered">function toH
  *  to this function, it is first parsed into a markdown tree by calling
  *  [[parse]].
  **/
-expose.toHTMLTree = <span class="fstat-no" title="function not covered">function toHTMLTree( input, dialect , options ) {</span>
+expose.toHTMLTree = <span class="fstat-no" title="function not covered" >function toHTMLTree( input, dialect , options ) {</span>
   // convert string input to an MD tree
-<span class="cstat-no" title="statement not covered">  if ( typeof input ==="string" ) <span class="cstat-no" title="statement not covered">input = this.parse( input, dialect );</span></span>
+<span class="cstat-no" title="statement not covered" >  if ( typeof input ==="string" ) <span class="cstat-no" title="statement not covered" >input = this.parse( input, dialect );</span></span>
 &nbsp;
   // Now convert the MD tree to an HTML tree
 &nbsp;
   // remove references from the tree
-<span class="cstat-no" title="statement not covered">  var attrs = extract_attr( input ),</span>
+<span class="cstat-no" title="statement not covered" >  var attrs = extract_attr( input ),</span>
       refs = {};
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( attrs &amp;&amp; attrs.references ) {</span>
-<span class="cstat-no" title="statement not covered">    refs = attrs.references;</span>
+<span class="cstat-no" title="statement not covered" >  if ( attrs &amp;&amp; attrs.references ) {</span>
+<span class="cstat-no" title="statement not covered" >    refs = attrs.references;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var html = convert_tree_to_html( input, refs , options );</span>
-<span class="cstat-no" title="statement not covered">  merge_text_nodes( html );</span>
-<span class="cstat-no" title="statement not covered">  return html;</span>
+<span class="cstat-no" title="statement not covered" >  var html = convert_tree_to_html( input, refs , options );</span>
+<span class="cstat-no" title="statement not covered" >  merge_text_nodes( html );</span>
+<span class="cstat-no" title="statement not covered" >  return html;</span>
 };
 &nbsp;
 // For Spidermonkey based engines
-<span class="fstat-no" title="function not covered">function mk_block_toSource() {</span>
-<span class="cstat-no" title="statement not covered">  return "Markdown.mk_block( " +</span>
+<span class="fstat-no" title="function not covered" >function mk_block_toSource() {</span>
+<span class="cstat-no" title="statement not covered" >  return "Markdown.mk_block( " +</span>
           uneval(this.toString()) +
           ", " +
           uneval(this.trailing) +
@@ -3792,9 +3794,9 @@ expose.toHTMLTree = <span class="fstat-no" title="function not covered">function
 }
 &nbsp;
 // node
-<span class="fstat-no" title="function not covered">function mk_block_inspect() {</span>
-<span class="cstat-no" title="statement not covered">  var util = require("util");</span>
-<span class="cstat-no" title="statement not covered">  return "Markdown.mk_block( " +</span>
+<span class="fstat-no" title="function not covered" >function mk_block_inspect() {</span>
+<span class="cstat-no" title="statement not covered" >  var util = require("util");</span>
+<span class="cstat-no" title="statement not covered" >  return "Markdown.mk_block( " +</span>
           util.inspect(this.toString()) +
           ", " +
           util.inspect(this.trailing) +
@@ -3804,55 +3806,55 @@ expose.toHTMLTree = <span class="fstat-no" title="function not covered">function
 &nbsp;
 }
 &nbsp;
-var mk_block = Markdown.mk_block = <span class="fstat-no" title="function not covered">function(block, trail, line) {</span>
+var mk_block = Markdown.mk_block = <span class="fstat-no" title="function not covered" >function(block, trail, line) {</span>
   // Be helpful for default case in tests.
-<span class="cstat-no" title="statement not covered">  if ( arguments.length == 1 ) <span class="cstat-no" title="statement not covered">trail = "\n\n";</span></span>
+<span class="cstat-no" title="statement not covered" >  if ( arguments.length == 1 ) <span class="cstat-no" title="statement not covered" >trail = "\n\n";</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var s = new String(block);</span>
-<span class="cstat-no" title="statement not covered">  s.trailing = trail;</span>
+<span class="cstat-no" title="statement not covered" >  var s = new String(block);</span>
+<span class="cstat-no" title="statement not covered" >  s.trailing = trail;</span>
   // To make it clear its not just a string
-<span class="cstat-no" title="statement not covered">  s.inspect = mk_block_inspect;</span>
-<span class="cstat-no" title="statement not covered">  s.toSource = mk_block_toSource;</span>
+<span class="cstat-no" title="statement not covered" >  s.inspect = mk_block_inspect;</span>
+<span class="cstat-no" title="statement not covered" >  s.toSource = mk_block_toSource;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( line != undefined )</span>
-<span class="cstat-no" title="statement not covered">    s.lineNumber = line;</span>
+<span class="cstat-no" title="statement not covered" >  if ( line != undefined )</span>
+<span class="cstat-no" title="statement not covered" >    s.lineNumber = line;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return s;</span>
+<span class="cstat-no" title="statement not covered" >  return s;</span>
 };
 &nbsp;
-<span class="fstat-no" title="function not covered">function count_lines( str ) {</span>
-<span class="cstat-no" title="statement not covered">  var n = 0, i = -1;</span>
-<span class="cstat-no" title="statement not covered">  while ( ( i = str.indexOf("\n", i + 1) ) !== -1 ) <span class="cstat-no" title="statement not covered">n++;</span></span>
-<span class="cstat-no" title="statement not covered">  return n;</span>
+<span class="fstat-no" title="function not covered" >function count_lines( str ) {</span>
+<span class="cstat-no" title="statement not covered" >  var n = 0, i = -1;</span>
+<span class="cstat-no" title="statement not covered" >  while ( ( i = str.indexOf("\n", i + 1) ) !== -1 ) <span class="cstat-no" title="statement not covered" >n++;</span></span>
+<span class="cstat-no" title="statement not covered" >  return n;</span>
 }
 &nbsp;
 // Internal - split source into rough blocks
-Markdown.prototype.split_blocks = <span class="fstat-no" title="function not covered">function splitBlocks( input, startLine ) {</span>
-<span class="cstat-no" title="statement not covered">  input = input.replace(/(\r\n|\n|\r)/g, "\n");</span>
+Markdown.prototype.split_blocks = <span class="fstat-no" title="function not covered" >function splitBlocks( input, startLine ) {</span>
+<span class="cstat-no" title="statement not covered" >  input = input.replace(/(\r\n|\n|\r)/g, "\n");</span>
   // [\s\S] matches _anything_ (newline or space)
   // [^] is equivalent but doesn't work in IEs.
-<span class="cstat-no" title="statement not covered">  var re = /([\s\S]+?)($|\n#|\n(?:\s*\n|$)+)/g,</span>
+<span class="cstat-no" title="statement not covered" >  var re = /([\s\S]+?)($|\n#|\n(?:\s*\n|$)+)/g,</span>
       blocks = [],
       m;
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var line_no = 1;</span>
+<span class="cstat-no" title="statement not covered" >  var line_no = 1;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( ( m = /^(\s*\n)/.exec(input) ) != null ) {</span>
+<span class="cstat-no" title="statement not covered" >  if ( ( m = /^(\s*\n)/.exec(input) ) != null ) {</span>
     // skip (but count) leading blank lines
-<span class="cstat-no" title="statement not covered">    line_no += count_lines( m[0] );</span>
-<span class="cstat-no" title="statement not covered">    re.lastIndex = m[0].length;</span>
+<span class="cstat-no" title="statement not covered" >    line_no += count_lines( m[0] );</span>
+<span class="cstat-no" title="statement not covered" >    re.lastIndex = m[0].length;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  while ( ( m = re.exec(input) ) !== null ) {</span>
-<span class="cstat-no" title="statement not covered">    if (m[2] == "\n#") {</span>
-<span class="cstat-no" title="statement not covered">      m[2] = "\n";</span>
-<span class="cstat-no" title="statement not covered">      re.lastIndex--;</span>
+<span class="cstat-no" title="statement not covered" >  while ( ( m = re.exec(input) ) !== null ) {</span>
+<span class="cstat-no" title="statement not covered" >    if (m[2] == "\n#") {</span>
+<span class="cstat-no" title="statement not covered" >      m[2] = "\n";</span>
+<span class="cstat-no" title="statement not covered" >      re.lastIndex--;</span>
     }
-<span class="cstat-no" title="statement not covered">    blocks.push( mk_block( m[1], m[2], line_no ) );</span>
-<span class="cstat-no" title="statement not covered">    line_no += count_lines( m[0] );</span>
+<span class="cstat-no" title="statement not covered" >    blocks.push( mk_block( m[1], m[2], line_no ) );</span>
+<span class="cstat-no" title="statement not covered" >    line_no += count_lines( m[0] );</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return blocks;</span>
+<span class="cstat-no" title="statement not covered" >  return blocks;</span>
 };
 &nbsp;
 /**
@@ -3876,32 +3878,32 @@ Markdown.prototype.split_blocks = <span class="fstat-no" title="function not cov
  * define a `__call__` method on the dialect that will get invoked to handle
  * the block processing.
  */
-Markdown.prototype.processBlock = <span class="fstat-no" title="function not covered">function processBlock( block, next ) {</span>
-<span class="cstat-no" title="statement not covered">  var cbs = this.dialect.block,</span>
+Markdown.prototype.processBlock = <span class="fstat-no" title="function not covered" >function processBlock( block, next ) {</span>
+<span class="cstat-no" title="statement not covered" >  var cbs = this.dialect.block,</span>
       ord = cbs.__order__;
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( "__call__" in cbs ) {</span>
-<span class="cstat-no" title="statement not covered">    return cbs.__call__.call(this, block, next);</span>
+<span class="cstat-no" title="statement not covered" >  if ( "__call__" in cbs ) {</span>
+<span class="cstat-no" title="statement not covered" >    return cbs.__call__.call(this, block, next);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for ( var i = 0; i &lt; ord.length; i++ ) {</span>
+<span class="cstat-no" title="statement not covered" >  for ( var i = 0; i &lt; ord.length; i++ ) {</span>
     //D:this.debug( "Testing", ord[i] );
-<span class="cstat-no" title="statement not covered">    var res = cbs[ ord[i] ].call( this, block, next );</span>
-<span class="cstat-no" title="statement not covered">    if ( res ) {</span>
+<span class="cstat-no" title="statement not covered" >    var res = cbs[ ord[i] ].call( this, block, next );</span>
+<span class="cstat-no" title="statement not covered" >    if ( res ) {</span>
       //D:this.debug("  matched");
-<span class="cstat-no" title="statement not covered">      if ( !isArray(res) || ( res.length &gt; 0 &amp;&amp; !( isArray(res[0]) ) ) )</span>
-<span class="cstat-no" title="statement not covered">        this.debug(ord[i], "didn't return a proper array");</span>
+<span class="cstat-no" title="statement not covered" >      if ( !isArray(res) || ( res.length &gt; 0 &amp;&amp; !( isArray(res[0]) ) ) )</span>
+<span class="cstat-no" title="statement not covered" >        this.debug(ord[i], "didn't return a proper array");</span>
       //D:this.debug( "" );
-<span class="cstat-no" title="statement not covered">      return res;</span>
+<span class="cstat-no" title="statement not covered" >      return res;</span>
     }
   }
 &nbsp;
   // Uhoh! no match! Should we throw an error?
-<span class="cstat-no" title="statement not covered">  return [];</span>
+<span class="cstat-no" title="statement not covered" >  return [];</span>
 };
 &nbsp;
-Markdown.prototype.processInline = <span class="fstat-no" title="function not covered">function processInline( block ) {</span>
-<span class="cstat-no" title="statement not covered">  return this.dialect.inline.__call__.call( this, String( block ) );</span>
+Markdown.prototype.processInline = <span class="fstat-no" title="function not covered" >function processInline( block ) {</span>
+<span class="cstat-no" title="statement not covered" >  return this.dialect.inline.__call__.call( this, String( block ) );</span>
 };
 &nbsp;
 /**
@@ -3911,52 +3913,52 @@ Markdown.prototype.processInline = <span class="fstat-no" title="function not co
  *  Parse `source` into a JsonML tree representing the markdown document.
  **/
 // custom_tree means set this.tree to `custom_tree` and restore old value on return
-Markdown.prototype.toTree = <span class="fstat-no" title="function not covered">function toTree( source, custom_root ) {</span>
-<span class="cstat-no" title="statement not covered">  var blocks = source instanceof Array ? source : this.split_blocks( source );</span>
+Markdown.prototype.toTree = <span class="fstat-no" title="function not covered" >function toTree( source, custom_root ) {</span>
+<span class="cstat-no" title="statement not covered" >  var blocks = source instanceof Array ? source : this.split_blocks( source );</span>
 &nbsp;
   // Make tree a member variable so its easier to mess with in extensions
-<span class="cstat-no" title="statement not covered">  var old_tree = this.tree;</span>
-<span class="cstat-no" title="statement not covered">  try {</span>
-<span class="cstat-no" title="statement not covered">    this.tree = custom_root || this.tree || [ "markdown" ];</span>
+<span class="cstat-no" title="statement not covered" >  var old_tree = this.tree;</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    this.tree = custom_root || this.tree || [ "markdown" ];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    blocks:</span>
-<span class="cstat-no" title="statement not covered">    while ( blocks.length ) {</span>
-<span class="cstat-no" title="statement not covered">      var b = this.processBlock( blocks.shift(), blocks );</span>
+<span class="cstat-no" title="statement not covered" >    blocks:</span>
+<span class="cstat-no" title="statement not covered" >    while ( blocks.length ) {</span>
+<span class="cstat-no" title="statement not covered" >      var b = this.processBlock( blocks.shift(), blocks );</span>
 &nbsp;
       // Reference blocks and the like won't return any content
-<span class="cstat-no" title="statement not covered">      if ( !b.length ) <span class="cstat-no" title="statement not covered">continue blocks;</span></span>
+<span class="cstat-no" title="statement not covered" >      if ( !b.length ) <span class="cstat-no" title="statement not covered" >continue blocks;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      this.tree.push.apply( this.tree, b );</span>
+<span class="cstat-no" title="statement not covered" >      this.tree.push.apply( this.tree, b );</span>
     }
-<span class="cstat-no" title="statement not covered">    return this.tree;</span>
+<span class="cstat-no" title="statement not covered" >    return this.tree;</span>
   }
   finally {
-<span class="cstat-no" title="statement not covered">    if ( custom_root ) {</span>
-<span class="cstat-no" title="statement not covered">      this.tree = old_tree;</span>
+<span class="cstat-no" title="statement not covered" >    if ( custom_root ) {</span>
+<span class="cstat-no" title="statement not covered" >      this.tree = old_tree;</span>
     }
   }
 };
 &nbsp;
 // Noop by default
-Markdown.prototype.debug = <span class="fstat-no" title="function not covered">function () {</span>
-<span class="cstat-no" title="statement not covered">  var args = Array.prototype.slice.call( arguments);</span>
-<span class="cstat-no" title="statement not covered">  args.unshift(this.debug_indent);</span>
-<span class="cstat-no" title="statement not covered">  if ( typeof print !== "undefined" )</span>
-<span class="cstat-no" title="statement not covered">      print.apply( print, args );</span>
-<span class="cstat-no" title="statement not covered">  if ( typeof console !== "undefined" &amp;&amp; typeof console.log !== "undefined" )</span>
-<span class="cstat-no" title="statement not covered">      console.log.apply( null, args );</span>
+Markdown.prototype.debug = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  var args = Array.prototype.slice.call( arguments);</span>
+<span class="cstat-no" title="statement not covered" >  args.unshift(this.debug_indent);</span>
+<span class="cstat-no" title="statement not covered" >  if ( typeof print !== "undefined" )</span>
+<span class="cstat-no" title="statement not covered" >      print.apply( print, args );</span>
+<span class="cstat-no" title="statement not covered" >  if ( typeof console !== "undefined" &amp;&amp; typeof console.log !== "undefined" )</span>
+<span class="cstat-no" title="statement not covered" >      console.log.apply( null, args );</span>
 }
 &nbsp;
-Markdown.prototype.loop_re_over_block = <span class="fstat-no" title="function not covered">function( re, block, cb ) {</span>
+Markdown.prototype.loop_re_over_block = <span class="fstat-no" title="function not covered" >function( re, block, cb ) {</span>
   // Dont use /g regexps with this
-<span class="cstat-no" title="statement not covered">  var m,</span>
+<span class="cstat-no" title="statement not covered" >  var m,</span>
       b = block.valueOf();
 &nbsp;
-<span class="cstat-no" title="statement not covered">  while ( b.length &amp;&amp; (m = re.exec(b) ) != null ) {</span>
-<span class="cstat-no" title="statement not covered">    b = b.substr( m[0].length );</span>
-<span class="cstat-no" title="statement not covered">    cb.call(this, m);</span>
+<span class="cstat-no" title="statement not covered" >  while ( b.length &amp;&amp; (m = re.exec(b) ) != null ) {</span>
+<span class="cstat-no" title="statement not covered" >    b = b.substr( m[0].length );</span>
+<span class="cstat-no" title="statement not covered" >    cb.call(this, m);</span>
   }
-<span class="cstat-no" title="statement not covered">  return b;</span>
+<span class="cstat-no" title="statement not covered" >  return b;</span>
 };
 &nbsp;
 /**
@@ -3976,97 +3978,97 @@ Markdown.dialects = {};
  **/
 Markdown.dialects.Gruber = {
   block: {
-    atxHeader: <span class="fstat-no" title="function not covered">function atxHeader( block, next ) {</span>
-<span class="cstat-no" title="statement not covered">      var m = block.match( /^(#{1,6})\s*(.*?)\s*#*\s*(?:\n|$)/ );</span>
+    atxHeader: <span class="fstat-no" title="function not covered" >function atxHeader( block, next ) {</span>
+<span class="cstat-no" title="statement not covered" >      var m = block.match( /^(#{1,6})\s*(.*?)\s*#*\s*(?:\n|$)/ );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( !m ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="cstat-no" title="statement not covered" >      if ( !m ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var header = [ "header", { level: m[ 1 ].length } ];</span>
-<span class="cstat-no" title="statement not covered">      Array.prototype.push.apply(header, this.processInline(m[ 2 ]));</span>
+<span class="cstat-no" title="statement not covered" >      var header = [ "header", { level: m[ 1 ].length } ];</span>
+<span class="cstat-no" title="statement not covered" >      Array.prototype.push.apply(header, this.processInline(m[ 2 ]));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( m[0].length &lt; block.length )</span>
-<span class="cstat-no" title="statement not covered">        next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );</span>
+<span class="cstat-no" title="statement not covered" >      if ( m[0].length &lt; block.length )</span>
+<span class="cstat-no" title="statement not covered" >        next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return [ header ];</span>
+<span class="cstat-no" title="statement not covered" >      return [ header ];</span>
     },
 &nbsp;
-    setextHeader: <span class="fstat-no" title="function not covered">function setextHeader( block, next ) {</span>
-<span class="cstat-no" title="statement not covered">      var m = block.match( /^(.*)\n([-=])\2\2+(?:\n|$)/ );</span>
+    setextHeader: <span class="fstat-no" title="function not covered" >function setextHeader( block, next ) {</span>
+<span class="cstat-no" title="statement not covered" >      var m = block.match( /^(.*)\n([-=])\2\2+(?:\n|$)/ );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( !m ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="cstat-no" title="statement not covered" >      if ( !m ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var level = ( m[ 2 ] === "=" ) ? 1 : 2;</span>
-<span class="cstat-no" title="statement not covered">      var header = [ "header", { level : level }, m[ 1 ] ];</span>
+<span class="cstat-no" title="statement not covered" >      var level = ( m[ 2 ] === "=" ) ? 1 : 2;</span>
+<span class="cstat-no" title="statement not covered" >      var header = [ "header", { level : level }, m[ 1 ] ];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( m[0].length &lt; block.length )</span>
-<span class="cstat-no" title="statement not covered">        next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );</span>
+<span class="cstat-no" title="statement not covered" >      if ( m[0].length &lt; block.length )</span>
+<span class="cstat-no" title="statement not covered" >        next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return [ header ];</span>
+<span class="cstat-no" title="statement not covered" >      return [ header ];</span>
     },
 &nbsp;
-    code: <span class="fstat-no" title="function not covered">function code( block, next ) {</span>
+    code: <span class="fstat-no" title="function not covered" >function code( block, next ) {</span>
       // |    Foo
       // |bar
       // should be a code block followed by a paragraph. Fun
       //
       // There might also be adjacent code block to merge.
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var ret = [],</span>
+<span class="cstat-no" title="statement not covered" >      var ret = [],</span>
           re = /^(?: {0,3}\t| {4})(.*)\n?/,
           lines;
 &nbsp;
       // 4 spaces + content
-<span class="cstat-no" title="statement not covered">      if ( !block.match( re ) ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="cstat-no" title="statement not covered" >      if ( !block.match( re ) ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      block_search:</span>
-<span class="cstat-no" title="statement not covered">      do {</span>
+<span class="cstat-no" title="statement not covered" >      block_search:</span>
+<span class="cstat-no" title="statement not covered" >      do {</span>
         // Now pull out the rest of the lines
-<span class="cstat-no" title="statement not covered">        var b = this.loop_re_over_block(</span>
-                  re, block.valueOf(), <span class="fstat-no" title="function not covered">function( m ) {</span> <span class="cstat-no" title="statement not covered">ret.push( m[1] ); </span>} );
+<span class="cstat-no" title="statement not covered" >        var b = this.loop_re_over_block(</span>
+                  re, block.valueOf(), <span class="fstat-no" title="function not covered" >function( m ) {</span> <span class="cstat-no" title="statement not covered" >ret.push( m[1] ); </span>} );
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if ( b.length ) {</span>
+<span class="cstat-no" title="statement not covered" >        if ( b.length ) {</span>
           // Case alluded to in first comment. push it back on as a new block
-<span class="cstat-no" title="statement not covered">          next.unshift( mk_block(b, block.trailing) );</span>
-<span class="cstat-no" title="statement not covered">          break block_search;</span>
+<span class="cstat-no" title="statement not covered" >          next.unshift( mk_block(b, block.trailing) );</span>
+<span class="cstat-no" title="statement not covered" >          break block_search;</span>
         }
-        else <span class="cstat-no" title="statement not covered">if ( next.length ) {</span>
+        else <span class="cstat-no" title="statement not covered" >if ( next.length ) {</span>
           // Check the next block - it might be code too
-<span class="cstat-no" title="statement not covered">          if ( !next[0].match( re ) ) <span class="cstat-no" title="statement not covered">break block_search;</span></span>
+<span class="cstat-no" title="statement not covered" >          if ( !next[0].match( re ) ) <span class="cstat-no" title="statement not covered" >break block_search;</span></span>
 &nbsp;
           // Pull how how many blanks lines follow - minus two to account for .join
-<span class="cstat-no" title="statement not covered">          ret.push ( block.trailing.replace(/[^\n]/g, "").substring(2) );</span>
+<span class="cstat-no" title="statement not covered" >          ret.push ( block.trailing.replace(/[^\n]/g, "").substring(2) );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">          block = next.shift();</span>
+<span class="cstat-no" title="statement not covered" >          block = next.shift();</span>
         }
         else {
-<span class="cstat-no" title="statement not covered">          break block_search;</span>
+<span class="cstat-no" title="statement not covered" >          break block_search;</span>
         }
       } while ( true );
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return [ [ "code_block", ret.join("\n") ] ];</span>
+<span class="cstat-no" title="statement not covered" >      return [ [ "code_block", ret.join("\n") ] ];</span>
     },
 &nbsp;
-    horizRule: <span class="fstat-no" title="function not covered">function horizRule( block, next ) {</span>
+    horizRule: <span class="fstat-no" title="function not covered" >function horizRule( block, next ) {</span>
       // this needs to find any hr in the block to handle abutting blocks
-<span class="cstat-no" title="statement not covered">      var m = block.match( /^(?:([\s\S]*?)\n)?[ \t]*([-_*])(?:[ \t]*\2){2,}[ \t]*(?:\n([\s\S]*))?$/ );</span>
+<span class="cstat-no" title="statement not covered" >      var m = block.match( /^(?:([\s\S]*?)\n)?[ \t]*([-_*])(?:[ \t]*\2){2,}[ \t]*(?:\n([\s\S]*))?$/ );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( !m ) {</span>
-<span class="cstat-no" title="statement not covered">        return undefined;</span>
+<span class="cstat-no" title="statement not covered" >      if ( !m ) {</span>
+<span class="cstat-no" title="statement not covered" >        return undefined;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var jsonml = [ [ "hr" ] ];</span>
+<span class="cstat-no" title="statement not covered" >      var jsonml = [ [ "hr" ] ];</span>
 &nbsp;
       // if there's a leading abutting block, process it
-<span class="cstat-no" title="statement not covered">      if ( m[ 1 ] ) {</span>
-<span class="cstat-no" title="statement not covered">        jsonml.unshift.apply( jsonml, this.processBlock( m[ 1 ], [] ) );</span>
+<span class="cstat-no" title="statement not covered" >      if ( m[ 1 ] ) {</span>
+<span class="cstat-no" title="statement not covered" >        jsonml.unshift.apply( jsonml, this.processBlock( m[ 1 ], [] ) );</span>
       }
 &nbsp;
       // if there's a trailing abutting block, stick it into next
-<span class="cstat-no" title="statement not covered">      if ( m[ 3 ] ) {</span>
-<span class="cstat-no" title="statement not covered">        next.unshift( mk_block( m[ 3 ] ) );</span>
+<span class="cstat-no" title="statement not covered" >      if ( m[ 3 ] ) {</span>
+<span class="cstat-no" title="statement not covered" >        next.unshift( mk_block( m[ 3 ] ) );</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return jsonml;</span>
+<span class="cstat-no" title="statement not covered" >      return jsonml;</span>
     },
 &nbsp;
     // There are two types of lists. Tight and loose. Tight lists have no whitespace
@@ -4097,104 +4099,104 @@ Markdown.dialects.Gruber = {
 &nbsp;
       // TODO: Cache this regexp for certain depths.
       // Create a regexp suitable for matching an li for a given stack depth
-<span class="fstat-no" title="function not covered">      function regex_for_depth( depth ) {</span>
+<span class="fstat-no" title="function not covered" >      function regex_for_depth( depth ) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return new RegExp(</span>
+<span class="cstat-no" title="statement not covered" >        return new RegExp(</span>
           // m[1] = indent, m[2] = list_type
           "(?:^(" + indent_re + "{0," + depth + "} {0,3})(" + any_list + ")\\s+)|" +
           // m[3] = cont
           "(^" + indent_re + "{0," + (depth-1) + "}[ ]{0,4})"
         );
       }
-<span class="fstat-no" title="function not covered">      function expand_tab( input ) {</span>
-<span class="cstat-no" title="statement not covered">        return input.replace( / {0,3}\t/g, "    " );</span>
+<span class="fstat-no" title="function not covered" >      function expand_tab( input ) {</span>
+<span class="cstat-no" title="statement not covered" >        return input.replace( / {0,3}\t/g, "    " );</span>
       }
 &nbsp;
       // Add inline content `inline` to `li`. inline comes from processInline
       // so is an array of content
-<span class="fstat-no" title="function not covered">      function add(li, loose, inline, nl) {</span>
-<span class="cstat-no" title="statement not covered">        if ( loose ) {</span>
-<span class="cstat-no" title="statement not covered">          li.push( [ "para" ].concat(inline) );</span>
-<span class="cstat-no" title="statement not covered">          return;</span>
+<span class="fstat-no" title="function not covered" >      function add(li, loose, inline, nl) {</span>
+<span class="cstat-no" title="statement not covered" >        if ( loose ) {</span>
+<span class="cstat-no" title="statement not covered" >          li.push( [ "para" ].concat(inline) );</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
         }
         // Hmmm, should this be any block level element or just paras?
-<span class="cstat-no" title="statement not covered">        var add_to = li[li.length -1] instanceof Array &amp;&amp; li[li.length - 1][0] == "para"</span>
+<span class="cstat-no" title="statement not covered" >        var add_to = li[li.length -1] instanceof Array &amp;&amp; li[li.length - 1][0] == "para"</span>
                    ? li[li.length -1]
                    : li;
 &nbsp;
         // If there is already some content in this list, add the new line in
-<span class="cstat-no" title="statement not covered">        if ( nl &amp;&amp; li.length &gt; 1 ) <span class="cstat-no" title="statement not covered">inline.unshift(nl);</span></span>
+<span class="cstat-no" title="statement not covered" >        if ( nl &amp;&amp; li.length &gt; 1 ) <span class="cstat-no" title="statement not covered" >inline.unshift(nl);</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        for ( var i = 0; i &lt; inline.length; i++ ) {</span>
-<span class="cstat-no" title="statement not covered">          var what = inline[i],</span>
+<span class="cstat-no" title="statement not covered" >        for ( var i = 0; i &lt; inline.length; i++ ) {</span>
+<span class="cstat-no" title="statement not covered" >          var what = inline[i],</span>
               is_str = typeof what == "string";
-<span class="cstat-no" title="statement not covered">          if ( is_str &amp;&amp; add_to.length &gt; 1 &amp;&amp; typeof add_to[add_to.length-1] == "string" ) {</span>
-<span class="cstat-no" title="statement not covered">            add_to[ add_to.length-1 ] += what;</span>
+<span class="cstat-no" title="statement not covered" >          if ( is_str &amp;&amp; add_to.length &gt; 1 &amp;&amp; typeof add_to[add_to.length-1] == "string" ) {</span>
+<span class="cstat-no" title="statement not covered" >            add_to[ add_to.length-1 ] += what;</span>
           }
           else {
-<span class="cstat-no" title="statement not covered">            add_to.push( what );</span>
+<span class="cstat-no" title="statement not covered" >            add_to.push( what );</span>
           }
         }
       }
 &nbsp;
       // contained means have an indent greater than the current one. On
       // *every* line in the block
-<span class="fstat-no" title="function not covered">      function get_contained_blocks( depth, blocks ) {</span>
+<span class="fstat-no" title="function not covered" >      function get_contained_blocks( depth, blocks ) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var re = new RegExp( "^(" + indent_re + "{" + depth + "}.*?\\n?)*$" ),</span>
+<span class="cstat-no" title="statement not covered" >        var re = new RegExp( "^(" + indent_re + "{" + depth + "}.*?\\n?)*$" ),</span>
             replace = new RegExp("^" + indent_re + "{" + depth + "}", "gm"),
             ret = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered">        while ( blocks.length &gt; 0 ) {</span>
-<span class="cstat-no" title="statement not covered">          if ( re.exec( blocks[0] ) ) {</span>
-<span class="cstat-no" title="statement not covered">            var b = blocks.shift(),</span>
+<span class="cstat-no" title="statement not covered" >        while ( blocks.length &gt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >          if ( re.exec( blocks[0] ) ) {</span>
+<span class="cstat-no" title="statement not covered" >            var b = blocks.shift(),</span>
                 // Now remove that indent
                 x = b.replace( replace, "");
 &nbsp;
-<span class="cstat-no" title="statement not covered">            ret.push( mk_block( x, b.trailing, b.lineNumber ) );</span>
+<span class="cstat-no" title="statement not covered" >            ret.push( mk_block( x, b.trailing, b.lineNumber ) );</span>
           }
           else {
-<span class="cstat-no" title="statement not covered">            break;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
           }
         }
-<span class="cstat-no" title="statement not covered">        return ret;</span>
+<span class="cstat-no" title="statement not covered" >        return ret;</span>
       }
 &nbsp;
       // passed to stack.forEach to turn list items up the stack into paras
-<span class="fstat-no" title="function not covered">      function paragraphify(s, i, stack) {</span>
-<span class="cstat-no" title="statement not covered">        var list = s.list;</span>
-<span class="cstat-no" title="statement not covered">        var last_li = list[list.length-1];</span>
+<span class="fstat-no" title="function not covered" >      function paragraphify(s, i, stack) {</span>
+<span class="cstat-no" title="statement not covered" >        var list = s.list;</span>
+<span class="cstat-no" title="statement not covered" >        var last_li = list[list.length-1];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if ( last_li[1] instanceof Array &amp;&amp; last_li[1][0] == "para" ) {</span>
-<span class="cstat-no" title="statement not covered">          return;</span>
+<span class="cstat-no" title="statement not covered" >        if ( last_li[1] instanceof Array &amp;&amp; last_li[1][0] == "para" ) {</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
         }
-<span class="cstat-no" title="statement not covered">        if ( i + 1 == stack.length ) {</span>
+<span class="cstat-no" title="statement not covered" >        if ( i + 1 == stack.length ) {</span>
           // Last stack frame
           // Keep the same array, but replace the contents
-<span class="cstat-no" title="statement not covered">          last_li.push( ["para"].concat( last_li.splice(1, last_li.length - 1) ) );</span>
+<span class="cstat-no" title="statement not covered" >          last_li.push( ["para"].concat( last_li.splice(1, last_li.length - 1) ) );</span>
         }
         else {
-<span class="cstat-no" title="statement not covered">          var sublist = last_li.pop();</span>
-<span class="cstat-no" title="statement not covered">          last_li.push( ["para"].concat( last_li.splice(1, last_li.length - 1) ), sublist );</span>
+<span class="cstat-no" title="statement not covered" >          var sublist = last_li.pop();</span>
+<span class="cstat-no" title="statement not covered" >          last_li.push( ["para"].concat( last_li.splice(1, last_li.length - 1) ), sublist );</span>
         }
       }
 &nbsp;
       // The matcher function
-      return <span class="fstat-no" title="function not covered">function( block, next ) {</span>
-<span class="cstat-no" title="statement not covered">        var m = block.match( is_list_re );</span>
-<span class="cstat-no" title="statement not covered">        if ( !m ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+      return <span class="fstat-no" title="function not covered" >function( block, next ) {</span>
+<span class="cstat-no" title="statement not covered" >        var m = block.match( is_list_re );</span>
+<span class="cstat-no" title="statement not covered" >        if ( !m ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
-<span class="fstat-no" title="function not covered">        function make_list( m ) {</span>
-<span class="cstat-no" title="statement not covered">          var list = bullet_list.exec( m[2] )</span>
+<span class="fstat-no" title="function not covered" >        function make_list( m ) {</span>
+<span class="cstat-no" title="statement not covered" >          var list = bullet_list.exec( m[2] )</span>
                    ? ["bulletlist"]
                    : ["numberlist"];
 &nbsp;
-<span class="cstat-no" title="statement not covered">          stack.push( { list: list, indent: m[1] } );</span>
-<span class="cstat-no" title="statement not covered">          return list;</span>
+<span class="cstat-no" title="statement not covered" >          stack.push( { list: list, indent: m[1] } );</span>
+<span class="cstat-no" title="statement not covered" >          return list;</span>
         }
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var stack = [], // Stack of lists for nesting.</span>
+<span class="cstat-no" title="statement not covered" >        var stack = [], // Stack of lists for nesting.</span>
             list = make_list( m ),
             last_li,
             loose = false,
@@ -4202,359 +4204,359 @@ Markdown.dialects.Gruber = {
             i;
 &nbsp;
         // Loop to search over block looking for inner block elements and loose lists
-<span class="cstat-no" title="statement not covered">        loose_search:</span>
-<span class="cstat-no" title="statement not covered">        while ( true ) {</span>
+<span class="cstat-no" title="statement not covered" >        loose_search:</span>
+<span class="cstat-no" title="statement not covered" >        while ( true ) {</span>
           // Split into lines preserving new lines at end of line
-<span class="cstat-no" title="statement not covered">          var lines = block.split( /(?=\n)/ );</span>
+<span class="cstat-no" title="statement not covered" >          var lines = block.split( /(?=\n)/ );</span>
 &nbsp;
           // We have to grab all lines for a li and call processInline on them
           // once as there are some inline things that can span lines.
-<span class="cstat-no" title="statement not covered">          var li_accumulate = "";</span>
+<span class="cstat-no" title="statement not covered" >          var li_accumulate = "";</span>
 &nbsp;
           // Loop over the lines in this block looking for tight lists.
-<span class="cstat-no" title="statement not covered">          tight_search:</span>
-<span class="cstat-no" title="statement not covered">          for ( var line_no = 0; line_no &lt; lines.length; line_no++ ) {</span>
-<span class="cstat-no" title="statement not covered">            var nl = "",</span>
-                l = lines[line_no].replace(/^\n/, <span class="fstat-no" title="function not covered">function(n) {</span> <span class="cstat-no" title="statement not covered">nl = n; <span class="cstat-no" title="statement not covered"></span>return ""; </span>});
+<span class="cstat-no" title="statement not covered" >          tight_search:</span>
+<span class="cstat-no" title="statement not covered" >          for ( var line_no = 0; line_no &lt; lines.length; line_no++ ) {</span>
+<span class="cstat-no" title="statement not covered" >            var nl = "",</span>
+                l = lines[line_no].replace(/^\n/, <span class="fstat-no" title="function not covered" >function(n) {</span> <span class="cstat-no" title="statement not covered" >nl = n; <span class="cstat-no" title="statement not covered" ></span>return ""; </span>});
 &nbsp;
             // TODO: really should cache this
-<span class="cstat-no" title="statement not covered">            var line_re = regex_for_depth( stack.length );</span>
+<span class="cstat-no" title="statement not covered" >            var line_re = regex_for_depth( stack.length );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            m = l.match( line_re );</span>
+<span class="cstat-no" title="statement not covered" >            m = l.match( line_re );</span>
             //print( "line:", uneval(l), "\nline match:", uneval(m) );
 &nbsp;
             // We have a list item
-<span class="cstat-no" title="statement not covered">            if ( m[1] !== undefined ) {</span>
+<span class="cstat-no" title="statement not covered" >            if ( m[1] !== undefined ) {</span>
               // Process the previous list item, if any
-<span class="cstat-no" title="statement not covered">              if ( li_accumulate.length ) {</span>
-<span class="cstat-no" title="statement not covered">                add( last_li, loose, this.processInline( li_accumulate ), nl );</span>
+<span class="cstat-no" title="statement not covered" >              if ( li_accumulate.length ) {</span>
+<span class="cstat-no" title="statement not covered" >                add( last_li, loose, this.processInline( li_accumulate ), nl );</span>
                 // Loose mode will have been dealt with. Reset it
-<span class="cstat-no" title="statement not covered">                loose = false;</span>
-<span class="cstat-no" title="statement not covered">                li_accumulate = "";</span>
+<span class="cstat-no" title="statement not covered" >                loose = false;</span>
+<span class="cstat-no" title="statement not covered" >                li_accumulate = "";</span>
               }
 &nbsp;
-<span class="cstat-no" title="statement not covered">              m[1] = expand_tab( m[1] );</span>
-<span class="cstat-no" title="statement not covered">              var wanted_depth = Math.floor(m[1].length/4)+1;</span>
+<span class="cstat-no" title="statement not covered" >              m[1] = expand_tab( m[1] );</span>
+<span class="cstat-no" title="statement not covered" >              var wanted_depth = Math.floor(m[1].length/4)+1;</span>
               //print( "want:", wanted_depth, "stack:", stack.length);
-<span class="cstat-no" title="statement not covered">              if ( wanted_depth &gt; stack.length ) {</span>
+<span class="cstat-no" title="statement not covered" >              if ( wanted_depth &gt; stack.length ) {</span>
                 // Deep enough for a nested list outright
                 //print ( "new nested list" );
-<span class="cstat-no" title="statement not covered">                list = make_list( m );</span>
-<span class="cstat-no" title="statement not covered">                last_li.push( list );</span>
-<span class="cstat-no" title="statement not covered">                last_li = list[1] = [ "listitem" ];</span>
+<span class="cstat-no" title="statement not covered" >                list = make_list( m );</span>
+<span class="cstat-no" title="statement not covered" >                last_li.push( list );</span>
+<span class="cstat-no" title="statement not covered" >                last_li = list[1] = [ "listitem" ];</span>
               }
               else {
                 // We aren't deep enough to be strictly a new level. This is
                 // where Md.pl goes nuts. If the indent matches a level in the
                 // stack, put it there, else put it one deeper then the
                 // wanted_depth deserves.
-<span class="cstat-no" title="statement not covered">                var found = false;</span>
-<span class="cstat-no" title="statement not covered">                for ( i = 0; i &lt; stack.length; i++ ) {</span>
-<span class="cstat-no" title="statement not covered">                  if ( stack[ i ].indent != m[1] ) <span class="cstat-no" title="statement not covered">continue;</span></span>
-<span class="cstat-no" title="statement not covered">                  list = stack[ i ].list;</span>
-<span class="cstat-no" title="statement not covered">                  stack.splice( i+1, stack.length - (i+1) );</span>
-<span class="cstat-no" title="statement not covered">                  found = true;</span>
-<span class="cstat-no" title="statement not covered">                  break;</span>
+<span class="cstat-no" title="statement not covered" >                var found = false;</span>
+<span class="cstat-no" title="statement not covered" >                for ( i = 0; i &lt; stack.length; i++ ) {</span>
+<span class="cstat-no" title="statement not covered" >                  if ( stack[ i ].indent != m[1] ) <span class="cstat-no" title="statement not covered" >continue;</span></span>
+<span class="cstat-no" title="statement not covered" >                  list = stack[ i ].list;</span>
+<span class="cstat-no" title="statement not covered" >                  stack.splice( i+1, stack.length - (i+1) );</span>
+<span class="cstat-no" title="statement not covered" >                  found = true;</span>
+<span class="cstat-no" title="statement not covered" >                  break;</span>
                 }
 &nbsp;
-<span class="cstat-no" title="statement not covered">                if (!found) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!found) {</span>
                   //print("not found. l:", uneval(l));
-<span class="cstat-no" title="statement not covered">                  wanted_depth++;</span>
-<span class="cstat-no" title="statement not covered">                  if ( wanted_depth &lt;= stack.length ) {</span>
-<span class="cstat-no" title="statement not covered">                    stack.splice(wanted_depth, stack.length - wanted_depth);</span>
+<span class="cstat-no" title="statement not covered" >                  wanted_depth++;</span>
+<span class="cstat-no" title="statement not covered" >                  if ( wanted_depth &lt;= stack.length ) {</span>
+<span class="cstat-no" title="statement not covered" >                    stack.splice(wanted_depth, stack.length - wanted_depth);</span>
                     //print("Desired depth now", wanted_depth, "stack:", stack.length);
-<span class="cstat-no" title="statement not covered">                    list = stack[wanted_depth-1].list;</span>
+<span class="cstat-no" title="statement not covered" >                    list = stack[wanted_depth-1].list;</span>
                     //print("list:", uneval(list) );
                   }
                   else {
                     //print ("made new stack for messy indent");
-<span class="cstat-no" title="statement not covered">                    list = make_list(m);</span>
-<span class="cstat-no" title="statement not covered">                    last_li.push(list);</span>
+<span class="cstat-no" title="statement not covered" >                    list = make_list(m);</span>
+<span class="cstat-no" title="statement not covered" >                    last_li.push(list);</span>
                   }
                 }
 &nbsp;
                 //print( uneval(list), "last", list === stack[stack.length-1].list );
-<span class="cstat-no" title="statement not covered">                last_li = [ "listitem" ];</span>
-<span class="cstat-no" title="statement not covered">                list.push(last_li);</span>
+<span class="cstat-no" title="statement not covered" >                last_li = [ "listitem" ];</span>
+<span class="cstat-no" title="statement not covered" >                list.push(last_li);</span>
               } // end depth of shenegains
-<span class="cstat-no" title="statement not covered">              nl = "";</span>
+<span class="cstat-no" title="statement not covered" >              nl = "";</span>
             }
 &nbsp;
             // Add content
-<span class="cstat-no" title="statement not covered">            if ( l.length &gt; m[0].length ) {</span>
-<span class="cstat-no" title="statement not covered">              li_accumulate += nl + l.substr( m[0].length );</span>
+<span class="cstat-no" title="statement not covered" >            if ( l.length &gt; m[0].length ) {</span>
+<span class="cstat-no" title="statement not covered" >              li_accumulate += nl + l.substr( m[0].length );</span>
             }
           } // tight_search
 &nbsp;
-<span class="cstat-no" title="statement not covered">          if ( li_accumulate.length ) {</span>
-<span class="cstat-no" title="statement not covered">            add( last_li, loose, this.processInline( li_accumulate ), nl );</span>
+<span class="cstat-no" title="statement not covered" >          if ( li_accumulate.length ) {</span>
+<span class="cstat-no" title="statement not covered" >            add( last_li, loose, this.processInline( li_accumulate ), nl );</span>
             // Loose mode will have been dealt with. Reset it
-<span class="cstat-no" title="statement not covered">            loose = false;</span>
-<span class="cstat-no" title="statement not covered">            li_accumulate = "";</span>
+<span class="cstat-no" title="statement not covered" >            loose = false;</span>
+<span class="cstat-no" title="statement not covered" >            li_accumulate = "";</span>
           }
 &nbsp;
           // Look at the next block - we might have a loose list. Or an extra
           // paragraph for the current li
-<span class="cstat-no" title="statement not covered">          var contained = get_contained_blocks( stack.length, next );</span>
+<span class="cstat-no" title="statement not covered" >          var contained = get_contained_blocks( stack.length, next );</span>
 &nbsp;
           // Deal with code blocks or properly nested lists
-<span class="cstat-no" title="statement not covered">          if ( contained.length &gt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >          if ( contained.length &gt; 0 ) {</span>
             // Make sure all listitems up the stack are paragraphs
-<span class="cstat-no" title="statement not covered">            forEach( stack, paragraphify, this);</span>
+<span class="cstat-no" title="statement not covered" >            forEach( stack, paragraphify, this);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            last_li.push.apply( last_li, this.toTree( contained, [] ) );</span>
+<span class="cstat-no" title="statement not covered" >            last_li.push.apply( last_li, this.toTree( contained, [] ) );</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered">          var next_block = next[0] &amp;&amp; next[0].valueOf() || "";</span>
+<span class="cstat-no" title="statement not covered" >          var next_block = next[0] &amp;&amp; next[0].valueOf() || "";</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">          if ( next_block.match(is_list_re) || next_block.match( /^ / ) ) {</span>
-<span class="cstat-no" title="statement not covered">            block = next.shift();</span>
+<span class="cstat-no" title="statement not covered" >          if ( next_block.match(is_list_re) || next_block.match( /^ / ) ) {</span>
+<span class="cstat-no" title="statement not covered" >            block = next.shift();</span>
 &nbsp;
             // Check for an HR following a list: features/lists/hr_abutting
-<span class="cstat-no" title="statement not covered">            var hr = this.dialect.block.horizRule( block, next );</span>
+<span class="cstat-no" title="statement not covered" >            var hr = this.dialect.block.horizRule( block, next );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if ( hr ) {</span>
-<span class="cstat-no" title="statement not covered">              ret.push.apply(ret, hr);</span>
-<span class="cstat-no" title="statement not covered">              break;</span>
+<span class="cstat-no" title="statement not covered" >            if ( hr ) {</span>
+<span class="cstat-no" title="statement not covered" >              ret.push.apply(ret, hr);</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
             }
 &nbsp;
             // Make sure all listitems up the stack are paragraphs
-<span class="cstat-no" title="statement not covered">            forEach( stack, paragraphify, this);</span>
+<span class="cstat-no" title="statement not covered" >            forEach( stack, paragraphify, this);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            loose = true;</span>
-<span class="cstat-no" title="statement not covered">            continue loose_search;</span>
+<span class="cstat-no" title="statement not covered" >            loose = true;</span>
+<span class="cstat-no" title="statement not covered" >            continue loose_search;</span>
           }
-<span class="cstat-no" title="statement not covered">          break;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
         } // loose_search
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return ret;</span>
+<span class="cstat-no" title="statement not covered" >        return ret;</span>
       };
     })(),
 &nbsp;
-    blockquote: <span class="fstat-no" title="function not covered">function blockquote( block, next ) {</span>
-<span class="cstat-no" title="statement not covered">      if ( !block.match( /^&gt;/m ) )</span>
-<span class="cstat-no" title="statement not covered">        return undefined;</span>
+    blockquote: <span class="fstat-no" title="function not covered" >function blockquote( block, next ) {</span>
+<span class="cstat-no" title="statement not covered" >      if ( !block.match( /^&gt;/m ) )</span>
+<span class="cstat-no" title="statement not covered" >        return undefined;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var jsonml = [];</span>
+<span class="cstat-no" title="statement not covered" >      var jsonml = [];</span>
 &nbsp;
       // separate out the leading abutting block, if any. I.e. in this case:
       //
       //  a
       //  &gt; b
       //
-<span class="cstat-no" title="statement not covered">      if ( block[ 0 ] != "&gt;" ) {</span>
-<span class="cstat-no" title="statement not covered">        var lines = block.split( /\n/ ),</span>
+<span class="cstat-no" title="statement not covered" >      if ( block[ 0 ] != "&gt;" ) {</span>
+<span class="cstat-no" title="statement not covered" >        var lines = block.split( /\n/ ),</span>
             prev = [],
             line_no = block.lineNumber;
 &nbsp;
         // keep shifting lines until you find a crotchet
-<span class="cstat-no" title="statement not covered">        while ( lines.length &amp;&amp; lines[ 0 ][ 0 ] != "&gt;" ) {</span>
-<span class="cstat-no" title="statement not covered">            prev.push( lines.shift() );</span>
-<span class="cstat-no" title="statement not covered">            line_no++;</span>
+<span class="cstat-no" title="statement not covered" >        while ( lines.length &amp;&amp; lines[ 0 ][ 0 ] != "&gt;" ) {</span>
+<span class="cstat-no" title="statement not covered" >            prev.push( lines.shift() );</span>
+<span class="cstat-no" title="statement not covered" >            line_no++;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var abutting = mk_block( prev.join( "\n" ), "\n", block.lineNumber );</span>
-<span class="cstat-no" title="statement not covered">        jsonml.push.apply( jsonml, this.processBlock( abutting, [] ) );</span>
+<span class="cstat-no" title="statement not covered" >        var abutting = mk_block( prev.join( "\n" ), "\n", block.lineNumber );</span>
+<span class="cstat-no" title="statement not covered" >        jsonml.push.apply( jsonml, this.processBlock( abutting, [] ) );</span>
         // reassemble new block of just block quotes!
-<span class="cstat-no" title="statement not covered">        block = mk_block( lines.join( "\n" ), block.trailing, line_no );</span>
+<span class="cstat-no" title="statement not covered" >        block = mk_block( lines.join( "\n" ), block.trailing, line_no );</span>
       }
 &nbsp;
 &nbsp;
       // if the next block is also a blockquote merge it in
-<span class="cstat-no" title="statement not covered">      while ( next.length &amp;&amp; next[ 0 ][ 0 ] == "&gt;" ) {</span>
-<span class="cstat-no" title="statement not covered">        var b = next.shift();</span>
-<span class="cstat-no" title="statement not covered">        block = mk_block( block + block.trailing + b, b.trailing, block.lineNumber );</span>
+<span class="cstat-no" title="statement not covered" >      while ( next.length &amp;&amp; next[ 0 ][ 0 ] == "&gt;" ) {</span>
+<span class="cstat-no" title="statement not covered" >        var b = next.shift();</span>
+<span class="cstat-no" title="statement not covered" >        block = mk_block( block + block.trailing + b, b.trailing, block.lineNumber );</span>
       }
 &nbsp;
       // Strip off the leading "&gt; " and re-process as a block.
-<span class="cstat-no" title="statement not covered">      var input = block.replace( /^&gt; ?/gm, "" ),</span>
+<span class="cstat-no" title="statement not covered" >      var input = block.replace( /^&gt; ?/gm, "" ),</span>
           old_tree = this.tree,
           processedBlock = this.toTree( input, [ "blockquote" ] ),
           attr = extract_attr( processedBlock );
 &nbsp;
       // If any link references were found get rid of them
-<span class="cstat-no" title="statement not covered">      if ( attr &amp;&amp; attr.references ) {</span>
-<span class="cstat-no" title="statement not covered">        delete attr.references;</span>
+<span class="cstat-no" title="statement not covered" >      if ( attr &amp;&amp; attr.references ) {</span>
+<span class="cstat-no" title="statement not covered" >        delete attr.references;</span>
         // And then remove the attribute object if it's empty
-<span class="cstat-no" title="statement not covered">        if ( isEmpty( attr ) ) {</span>
-<span class="cstat-no" title="statement not covered">          processedBlock.splice( 1, 1 );</span>
+<span class="cstat-no" title="statement not covered" >        if ( isEmpty( attr ) ) {</span>
+<span class="cstat-no" title="statement not covered" >          processedBlock.splice( 1, 1 );</span>
         }
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      jsonml.push( processedBlock );</span>
-<span class="cstat-no" title="statement not covered">      return jsonml;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml.push( processedBlock );</span>
+<span class="cstat-no" title="statement not covered" >      return jsonml;</span>
     },
 &nbsp;
-    referenceDefn: <span class="fstat-no" title="function not covered">function referenceDefn( block, next) {</span>
-<span class="cstat-no" title="statement not covered">      var re = /^\s*\[(.*?)\]:\s*(\S+)(?:\s+(?:(['"])(.*?)\3|\((.*?)\)))?\n?/;</span>
+    referenceDefn: <span class="fstat-no" title="function not covered" >function referenceDefn( block, next) {</span>
+<span class="cstat-no" title="statement not covered" >      var re = /^\s*\[(.*?)\]:\s*(\S+)(?:\s+(?:(['"])(.*?)\3|\((.*?)\)))?\n?/;</span>
       // interesting matches are [ , ref_id, url, , title, title ]
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( !block.match(re) )</span>
-<span class="cstat-no" title="statement not covered">        return undefined;</span>
+<span class="cstat-no" title="statement not covered" >      if ( !block.match(re) )</span>
+<span class="cstat-no" title="statement not covered" >        return undefined;</span>
 &nbsp;
       // make an attribute node if it doesn't exist
-<span class="cstat-no" title="statement not covered">      if ( !extract_attr( this.tree ) ) {</span>
-<span class="cstat-no" title="statement not covered">        this.tree.splice( 1, 0, {} );</span>
+<span class="cstat-no" title="statement not covered" >      if ( !extract_attr( this.tree ) ) {</span>
+<span class="cstat-no" title="statement not covered" >        this.tree.splice( 1, 0, {} );</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var attrs = extract_attr( this.tree );</span>
+<span class="cstat-no" title="statement not covered" >      var attrs = extract_attr( this.tree );</span>
 &nbsp;
       // make a references hash if it doesn't exist
-<span class="cstat-no" title="statement not covered">      if ( attrs.references === undefined ) {</span>
-<span class="cstat-no" title="statement not covered">        attrs.references = {};</span>
+<span class="cstat-no" title="statement not covered" >      if ( attrs.references === undefined ) {</span>
+<span class="cstat-no" title="statement not covered" >        attrs.references = {};</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var b = this.loop_re_over_block(re, block, <span class="fstat-no" title="function not covered">function( m ) {</span></span>
+<span class="cstat-no" title="statement not covered" >      var b = this.loop_re_over_block(re, block, <span class="fstat-no" title="function not covered" >function( m ) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if ( m[2] &amp;&amp; m[2][0] == "&lt;" &amp;&amp; m[2][m[2].length-1] == "&gt;" )</span>
-<span class="cstat-no" title="statement not covered">          m[2] = m[2].substring( 1, m[2].length - 1 );</span>
+<span class="cstat-no" title="statement not covered" >        if ( m[2] &amp;&amp; m[2][0] == "&lt;" &amp;&amp; m[2][m[2].length-1] == "&gt;" )</span>
+<span class="cstat-no" title="statement not covered" >          m[2] = m[2].substring( 1, m[2].length - 1 );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var ref = attrs.references[ m[1].toLowerCase() ] = {</span>
+<span class="cstat-no" title="statement not covered" >        var ref = attrs.references[ m[1].toLowerCase() ] = {</span>
           href: m[2]
         };
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if ( m[4] !== undefined )</span>
-<span class="cstat-no" title="statement not covered">          ref.title = m[4];</span>
-        else <span class="cstat-no" title="statement not covered">if ( m[5] !== undefined )</span>
-<span class="cstat-no" title="statement not covered">          ref.title = m[5];</span>
+<span class="cstat-no" title="statement not covered" >        if ( m[4] !== undefined )</span>
+<span class="cstat-no" title="statement not covered" >          ref.title = m[4];</span>
+        else <span class="cstat-no" title="statement not covered" >if ( m[5] !== undefined )</span>
+<span class="cstat-no" title="statement not covered" >          ref.title = m[5];</span>
 &nbsp;
       } );
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( b.length )</span>
-<span class="cstat-no" title="statement not covered">        next.unshift( mk_block( b, block.trailing ) );</span>
+<span class="cstat-no" title="statement not covered" >      if ( b.length )</span>
+<span class="cstat-no" title="statement not covered" >        next.unshift( mk_block( b, block.trailing ) );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return [];</span>
+<span class="cstat-no" title="statement not covered" >      return [];</span>
     },
 &nbsp;
-    para: <span class="fstat-no" title="function not covered">function para( block, next ) {</span>
+    para: <span class="fstat-no" title="function not covered" >function para( block, next ) {</span>
       // everything's a para!
-<span class="cstat-no" title="statement not covered">      return [ ["para"].concat( this.processInline( block ) ) ];</span>
+<span class="cstat-no" title="statement not covered" >      return [ ["para"].concat( this.processInline( block ) ) ];</span>
     }
   }
 };
 &nbsp;
 Markdown.dialects.Gruber.inline = {
 &nbsp;
-    __oneElement__: <span class="fstat-no" title="function not covered">function oneElement( text, patterns_or_re, previous_nodes ) {</span>
-<span class="cstat-no" title="statement not covered">      var m,</span>
+    __oneElement__: <span class="fstat-no" title="function not covered" >function oneElement( text, patterns_or_re, previous_nodes ) {</span>
+<span class="cstat-no" title="statement not covered" >      var m,</span>
           res,
           lastIndex = 0;
 &nbsp;
-<span class="cstat-no" title="statement not covered">      patterns_or_re = patterns_or_re || this.dialect.inline.__patterns__;</span>
-<span class="cstat-no" title="statement not covered">      var re = new RegExp( "([\\s\\S]*?)(" + (patterns_or_re.source || patterns_or_re) + ")" );</span>
+<span class="cstat-no" title="statement not covered" >      patterns_or_re = patterns_or_re || this.dialect.inline.__patterns__;</span>
+<span class="cstat-no" title="statement not covered" >      var re = new RegExp( "([\\s\\S]*?)(" + (patterns_or_re.source || patterns_or_re) + ")" );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      m = re.exec( text );</span>
-<span class="cstat-no" title="statement not covered">      if (!m) {</span>
+<span class="cstat-no" title="statement not covered" >      m = re.exec( text );</span>
+<span class="cstat-no" title="statement not covered" >      if (!m) {</span>
         // Just boring text
-<span class="cstat-no" title="statement not covered">        return [ text.length, text ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ text.length, text ];</span>
       }
-      else <span class="cstat-no" title="statement not covered">if ( m[1] ) {</span>
+      else <span class="cstat-no" title="statement not covered" >if ( m[1] ) {</span>
         // Some un-interesting text matched. Return that first
-<span class="cstat-no" title="statement not covered">        return [ m[1].length, m[1] ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ m[1].length, m[1] ];</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var res;</span>
-<span class="cstat-no" title="statement not covered">      if ( m[2] in this.dialect.inline ) {</span>
-<span class="cstat-no" title="statement not covered">        res = this.dialect.inline[ m[2] ].call(</span>
+<span class="cstat-no" title="statement not covered" >      var res;</span>
+<span class="cstat-no" title="statement not covered" >      if ( m[2] in this.dialect.inline ) {</span>
+<span class="cstat-no" title="statement not covered" >        res = this.dialect.inline[ m[2] ].call(</span>
                   this,
                   text.substr( m.index ), m, previous_nodes || [] );
       }
       // Default for now to make dev easier. just slurp special and output it.
-<span class="cstat-no" title="statement not covered">      res = res || [ m[2].length, m[2] ];</span>
-<span class="cstat-no" title="statement not covered">      return res;</span>
+<span class="cstat-no" title="statement not covered" >      res = res || [ m[2].length, m[2] ];</span>
+<span class="cstat-no" title="statement not covered" >      return res;</span>
     },
 &nbsp;
-    __call__: <span class="fstat-no" title="function not covered">function inline( text, patterns ) {</span>
+    __call__: <span class="fstat-no" title="function not covered" >function inline( text, patterns ) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var out = [],</span>
+<span class="cstat-no" title="statement not covered" >      var out = [],</span>
           res;
 &nbsp;
-<span class="fstat-no" title="function not covered">      function add(x) {</span>
+<span class="fstat-no" title="function not covered" >      function add(x) {</span>
         //D:self.debug("  adding output", uneval(x));
-<span class="cstat-no" title="statement not covered">        if ( typeof x == "string" &amp;&amp; typeof out[out.length-1] == "string" )</span>
-<span class="cstat-no" title="statement not covered">          out[ out.length-1 ] += x;</span>
+<span class="cstat-no" title="statement not covered" >        if ( typeof x == "string" &amp;&amp; typeof out[out.length-1] == "string" )</span>
+<span class="cstat-no" title="statement not covered" >          out[ out.length-1 ] += x;</span>
         else
-<span class="cstat-no" title="statement not covered">          out.push(x);</span>
+<span class="cstat-no" title="statement not covered" >          out.push(x);</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      while ( text.length &gt; 0 ) {</span>
-<span class="cstat-no" title="statement not covered">        res = this.dialect.inline.__oneElement__.call(this, text, patterns, out );</span>
-<span class="cstat-no" title="statement not covered">        text = text.substr( res.shift() );</span>
-<span class="cstat-no" title="statement not covered">        forEach(res, add )</span>
+<span class="cstat-no" title="statement not covered" >      while ( text.length &gt; 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >        res = this.dialect.inline.__oneElement__.call(this, text, patterns, out );</span>
+<span class="cstat-no" title="statement not covered" >        text = text.substr( res.shift() );</span>
+<span class="cstat-no" title="statement not covered" >        forEach(res, add )</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return out;</span>
+<span class="cstat-no" title="statement not covered" >      return out;</span>
     },
 &nbsp;
     // These characters are intersting elsewhere, so have rules for them so that
     // chunks of plain text blocks don't include them
-    "]": <span class="fstat-no" title="function not covered">function () {</span>},
-    "}": <span class="fstat-no" title="function not covered">function () {</span>},
+    "]": <span class="fstat-no" title="function not covered" >function () {</span>},
+    "}": <span class="fstat-no" title="function not covered" >function () {</span>},
 &nbsp;
     __escape__ : /^\\[\\`\*_{}\[\]()#\+.!\-]/,
 &nbsp;
-    "\\": <span class="fstat-no" title="function not covered">function escaped( text ) {</span>
+    "\\": <span class="fstat-no" title="function not covered" >function escaped( text ) {</span>
       // [ length of input processed, node/children to add... ]
       // Only esacape: \ ` * _ { } [ ] ( ) # * + - . !
-<span class="cstat-no" title="statement not covered">      if ( this.dialect.inline.__escape__.exec( text ) )</span>
-<span class="cstat-no" title="statement not covered">        return [ 2, text.charAt( 1 ) ];</span>
+<span class="cstat-no" title="statement not covered" >      if ( this.dialect.inline.__escape__.exec( text ) )</span>
+<span class="cstat-no" title="statement not covered" >        return [ 2, text.charAt( 1 ) ];</span>
       else
         // Not an esacpe
-<span class="cstat-no" title="statement not covered">        return [ 1, "\\" ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ 1, "\\" ];</span>
     },
 &nbsp;
-    "![": <span class="fstat-no" title="function not covered">function image( text ) {</span>
+    "![": <span class="fstat-no" title="function not covered" >function image( text ) {</span>
 &nbsp;
       // Unlike images, alt text is plain text only. no other elements are
       // allowed in there
 &nbsp;
       // ![Alt text](/path/to/img.jpg "Optional title")
       //      1          2            3       4         &lt;--- captures
-<span class="cstat-no" title="statement not covered">      var m = text.match( /^!\[(.*?)\][ \t]*\([ \t]*([^")]*?)(?:[ \t]+(["'])(.*?)\3)?[ \t]*\)/ );</span>
+<span class="cstat-no" title="statement not covered" >      var m = text.match( /^!\[(.*?)\][ \t]*\([ \t]*([^")]*?)(?:[ \t]+(["'])(.*?)\3)?[ \t]*\)/ );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( m ) {</span>
-<span class="cstat-no" title="statement not covered">        if ( m[2] &amp;&amp; m[2][0] == "&lt;" &amp;&amp; m[2][m[2].length-1] == "&gt;" )</span>
-<span class="cstat-no" title="statement not covered">          m[2] = m[2].substring( 1, m[2].length - 1 );</span>
+<span class="cstat-no" title="statement not covered" >      if ( m ) {</span>
+<span class="cstat-no" title="statement not covered" >        if ( m[2] &amp;&amp; m[2][0] == "&lt;" &amp;&amp; m[2][m[2].length-1] == "&gt;" )</span>
+<span class="cstat-no" title="statement not covered" >          m[2] = m[2].substring( 1, m[2].length - 1 );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        m[2] = this.dialect.inline.__call__.call( this, m[2], /\\/ )[0];</span>
+<span class="cstat-no" title="statement not covered" >        m[2] = this.dialect.inline.__call__.call( this, m[2], /\\/ )[0];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var attrs = { alt: m[1], href: m[2] || "" };</span>
-<span class="cstat-no" title="statement not covered">        if ( m[4] !== undefined)</span>
-<span class="cstat-no" title="statement not covered">          attrs.title = m[4];</span>
+<span class="cstat-no" title="statement not covered" >        var attrs = { alt: m[1], href: m[2] || "" };</span>
+<span class="cstat-no" title="statement not covered" >        if ( m[4] !== undefined)</span>
+<span class="cstat-no" title="statement not covered" >          attrs.title = m[4];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return [ m[0].length, [ "img", attrs ] ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ m[0].length, [ "img", attrs ] ];</span>
       }
 &nbsp;
       // ![Alt text][id]
-<span class="cstat-no" title="statement not covered">      m = text.match( /^!\[(.*?)\][ \t]*\[(.*?)\]/ );</span>
+<span class="cstat-no" title="statement not covered" >      m = text.match( /^!\[(.*?)\][ \t]*\[(.*?)\]/ );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( m ) {</span>
+<span class="cstat-no" title="statement not covered" >      if ( m ) {</span>
         // We can't check if the reference is known here as it likely wont be
         // found till after. Check it in md tree-&gt;hmtl tree conversion
-<span class="cstat-no" title="statement not covered">        return [ m[0].length, [ "img_ref", { alt: m[1], ref: m[2].toLowerCase(), original: m[0] } ] ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ m[0].length, [ "img_ref", { alt: m[1], ref: m[2].toLowerCase(), original: m[0] } ] ];</span>
       }
 &nbsp;
       // Just consume the '!['
-<span class="cstat-no" title="statement not covered">      return [ 2, "![" ];</span>
+<span class="cstat-no" title="statement not covered" >      return [ 2, "![" ];</span>
     },
 &nbsp;
-    "[": <span class="fstat-no" title="function not covered">function link( text ) {</span>
+    "[": <span class="fstat-no" title="function not covered" >function link( text ) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var orig = String(text);</span>
+<span class="cstat-no" title="statement not covered" >      var orig = String(text);</span>
       // Inline content is possible inside `link text`
-<span class="cstat-no" title="statement not covered">      var res = Markdown.DialectHelpers.inline_until_char.call( this, text.substr(1), "]" );</span>
+<span class="cstat-no" title="statement not covered" >      var res = Markdown.DialectHelpers.inline_until_char.call( this, text.substr(1), "]" );</span>
 &nbsp;
       // No closing ']' found. Just consume the [
-<span class="cstat-no" title="statement not covered">      if ( !res ) <span class="cstat-no" title="statement not covered">return [ 1, "[" ];</span></span>
+<span class="cstat-no" title="statement not covered" >      if ( !res ) <span class="cstat-no" title="statement not covered" >return [ 1, "[" ];</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var consumed = 1 + res[ 0 ],</span>
+<span class="cstat-no" title="statement not covered" >      var consumed = 1 + res[ 0 ],</span>
           children = res[ 1 ],
           link,
           attrs;
 &nbsp;
       // At this point the first [...] has been parsed. See what follows to find
       // out which kind of link we are (reference or direct url)
-<span class="cstat-no" title="statement not covered">      text = text.substr( consumed );</span>
+<span class="cstat-no" title="statement not covered" >      text = text.substr( consumed );</span>
 &nbsp;
       // [link text](/path/to/img.jpg "Optional title")
       //                 1            2       3         &lt;--- captures
@@ -4562,109 +4564,109 @@ Markdown.dialects.Gruber.inline = {
       // back based on if there a matching ones in the url
       //    ([here](/url/(test))
       // The parens have to be balanced
-<span class="cstat-no" title="statement not covered">      var m = text.match( /^\s*\([ \t]*([^"']*)(?:[ \t]+(["'])(.*?)\2)?[ \t]*\)/ );</span>
-<span class="cstat-no" title="statement not covered">      if ( m ) {</span>
-<span class="cstat-no" title="statement not covered">        var url = m[1];</span>
-<span class="cstat-no" title="statement not covered">        consumed += m[0].length;</span>
+<span class="cstat-no" title="statement not covered" >      var m = text.match( /^\s*\([ \t]*([^"']*)(?:[ \t]+(["'])(.*?)\2)?[ \t]*\)/ );</span>
+<span class="cstat-no" title="statement not covered" >      if ( m ) {</span>
+<span class="cstat-no" title="statement not covered" >        var url = m[1];</span>
+<span class="cstat-no" title="statement not covered" >        consumed += m[0].length;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if ( url &amp;&amp; url[0] == "&lt;" &amp;&amp; url[url.length-1] == "&gt;" )</span>
-<span class="cstat-no" title="statement not covered">          url = url.substring( 1, url.length - 1 );</span>
+<span class="cstat-no" title="statement not covered" >        if ( url &amp;&amp; url[0] == "&lt;" &amp;&amp; url[url.length-1] == "&gt;" )</span>
+<span class="cstat-no" title="statement not covered" >          url = url.substring( 1, url.length - 1 );</span>
 &nbsp;
         // If there is a title we don't have to worry about parens in the url
-<span class="cstat-no" title="statement not covered">        if ( !m[3] ) {</span>
-<span class="cstat-no" title="statement not covered">          var open_parens = 1; </span>// One open that isn't in the capture
-<span class="cstat-no" title="statement not covered">          for ( var len = 0; len &lt; url.length; len++ ) {</span>
-<span class="cstat-no" title="statement not covered">            switch ( url[len] ) {</span>
+<span class="cstat-no" title="statement not covered" >        if ( !m[3] ) {</span>
+<span class="cstat-no" title="statement not covered" >          var open_parens = 1; </span>// One open that isn't in the capture
+<span class="cstat-no" title="statement not covered" >          for ( var len = 0; len &lt; url.length; len++ ) {</span>
+<span class="cstat-no" title="statement not covered" >            switch ( url[len] ) {</span>
             case "(":
-<span class="cstat-no" title="statement not covered">              open_parens++;</span>
-<span class="cstat-no" title="statement not covered">              break;</span>
+<span class="cstat-no" title="statement not covered" >              open_parens++;</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
             case ")":
-<span class="cstat-no" title="statement not covered">              if ( --open_parens == 0) {</span>
-<span class="cstat-no" title="statement not covered">                consumed -= url.length - len;</span>
-<span class="cstat-no" title="statement not covered">                url = url.substring(0, len);</span>
+<span class="cstat-no" title="statement not covered" >              if ( --open_parens == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                consumed -= url.length - len;</span>
+<span class="cstat-no" title="statement not covered" >                url = url.substring(0, len);</span>
               }
-<span class="cstat-no" title="statement not covered">              break;</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
             }
           }
         }
 &nbsp;
         // Process escapes only
-<span class="cstat-no" title="statement not covered">        url = this.dialect.inline.__call__.call( this, url, /\\/ )[0];</span>
+<span class="cstat-no" title="statement not covered" >        url = this.dialect.inline.__call__.call( this, url, /\\/ )[0];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        attrs = { href: url || "" };</span>
-<span class="cstat-no" title="statement not covered">        if ( m[3] !== undefined)</span>
-<span class="cstat-no" title="statement not covered">          attrs.title = m[3];</span>
+<span class="cstat-no" title="statement not covered" >        attrs = { href: url || "" };</span>
+<span class="cstat-no" title="statement not covered" >        if ( m[3] !== undefined)</span>
+<span class="cstat-no" title="statement not covered" >          attrs.title = m[3];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        link = [ "link", attrs ].concat( children );</span>
-<span class="cstat-no" title="statement not covered">        return [ consumed, link ];</span>
+<span class="cstat-no" title="statement not covered" >        link = [ "link", attrs ].concat( children );</span>
+<span class="cstat-no" title="statement not covered" >        return [ consumed, link ];</span>
       }
 &nbsp;
       // [Alt text][id]
       // [Alt text] [id]
-<span class="cstat-no" title="statement not covered">      m = text.match( /^\s*\[(.*?)\]/ );</span>
+<span class="cstat-no" title="statement not covered" >      m = text.match( /^\s*\[(.*?)\]/ );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( m ) {</span>
+<span class="cstat-no" title="statement not covered" >      if ( m ) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        consumed += m[ 0 ].length;</span>
+<span class="cstat-no" title="statement not covered" >        consumed += m[ 0 ].length;</span>
 &nbsp;
         // [links][] uses links as its reference
-<span class="cstat-no" title="statement not covered">        attrs = { ref: ( m[ 1 ] || String(children) ).toLowerCase(),  original: orig.substr( 0, consumed ) };</span>
+<span class="cstat-no" title="statement not covered" >        attrs = { ref: ( m[ 1 ] || String(children) ).toLowerCase(),  original: orig.substr( 0, consumed ) };</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        link = [ "link_ref", attrs ].concat( children );</span>
+<span class="cstat-no" title="statement not covered" >        link = [ "link_ref", attrs ].concat( children );</span>
 &nbsp;
         // We can't check if the reference is known here as it likely wont be
         // found till after. Check it in md tree-&gt;hmtl tree conversion.
         // Store the original so that conversion can revert if the ref isn't found.
-<span class="cstat-no" title="statement not covered">        return [ consumed, link ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ consumed, link ];</span>
       }
 &nbsp;
       // [id]
       // Only if id is plain (no formatting.)
-<span class="cstat-no" title="statement not covered">      if ( children.length == 1 &amp;&amp; typeof children[0] == "string" ) {</span>
+<span class="cstat-no" title="statement not covered" >      if ( children.length == 1 &amp;&amp; typeof children[0] == "string" ) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        attrs = { ref: children[0].toLowerCase(),  original: orig.substr( 0, consumed ) };</span>
-<span class="cstat-no" title="statement not covered">        link = [ "link_ref", attrs, children[0] ];</span>
-<span class="cstat-no" title="statement not covered">        return [ consumed, link ];</span>
+<span class="cstat-no" title="statement not covered" >        attrs = { ref: children[0].toLowerCase(),  original: orig.substr( 0, consumed ) };</span>
+<span class="cstat-no" title="statement not covered" >        link = [ "link_ref", attrs, children[0] ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ consumed, link ];</span>
       }
 &nbsp;
       // Just consume the "["
-<span class="cstat-no" title="statement not covered">      return [ 1, "[" ];</span>
+<span class="cstat-no" title="statement not covered" >      return [ 1, "[" ];</span>
     },
 &nbsp;
 &nbsp;
-    "&lt;": <span class="fstat-no" title="function not covered">function autoLink( text ) {</span>
-<span class="cstat-no" title="statement not covered">      var m;</span>
+    "&lt;": <span class="fstat-no" title="function not covered" >function autoLink( text ) {</span>
+<span class="cstat-no" title="statement not covered" >      var m;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( ( m = text.match( /^&lt;(?:((https?|ftp|mailto):[^&gt;]+)|(.*?@.*?\.[a-zA-Z]+))&gt;/ ) ) != null ) {</span>
-<span class="cstat-no" title="statement not covered">        if ( m[3] ) {</span>
-<span class="cstat-no" title="statement not covered">          return [ m[0].length, [ "link", { href: "mailto:" + m[3] }, m[3] ] ];</span>
+<span class="cstat-no" title="statement not covered" >      if ( ( m = text.match( /^&lt;(?:((https?|ftp|mailto):[^&gt;]+)|(.*?@.*?\.[a-zA-Z]+))&gt;/ ) ) != null ) {</span>
+<span class="cstat-no" title="statement not covered" >        if ( m[3] ) {</span>
+<span class="cstat-no" title="statement not covered" >          return [ m[0].length, [ "link", { href: "mailto:" + m[3] }, m[3] ] ];</span>
 &nbsp;
         }
-        else <span class="cstat-no" title="statement not covered">if ( m[2] == "mailto" ) {</span>
-<span class="cstat-no" title="statement not covered">          return [ m[0].length, [ "link", { href: m[1] }, m[1].substr("mailto:".length ) ] ];</span>
+        else <span class="cstat-no" title="statement not covered" >if ( m[2] == "mailto" ) {</span>
+<span class="cstat-no" title="statement not covered" >          return [ m[0].length, [ "link", { href: m[1] }, m[1].substr("mailto:".length ) ] ];</span>
         }
         else
-<span class="cstat-no" title="statement not covered">          return [ m[0].length, [ "link", { href: m[1] }, m[1] ] ];</span>
+<span class="cstat-no" title="statement not covered" >          return [ m[0].length, [ "link", { href: m[1] }, m[1] ] ];</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return [ 1, "&lt;" ];</span>
+<span class="cstat-no" title="statement not covered" >      return [ 1, "&lt;" ];</span>
     },
 &nbsp;
-    "`": <span class="fstat-no" title="function not covered">function inlineCode( text ) {</span>
+    "`": <span class="fstat-no" title="function not covered" >function inlineCode( text ) {</span>
       // Inline code block. as many backticks as you like to start it
       // Always skip over the opening ticks.
-<span class="cstat-no" title="statement not covered">      var m = text.match( /(`+)(([\s\S]*?)\1)/ );</span>
+<span class="cstat-no" title="statement not covered" >      var m = text.match( /(`+)(([\s\S]*?)\1)/ );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if ( m &amp;&amp; m[2] )</span>
-<span class="cstat-no" title="statement not covered">        return [ m[1].length + m[2].length, [ "inlinecode", m[3] ] ];</span>
+<span class="cstat-no" title="statement not covered" >      if ( m &amp;&amp; m[2] )</span>
+<span class="cstat-no" title="statement not covered" >        return [ m[1].length + m[2].length, [ "inlinecode", m[3] ] ];</span>
       else {
         // TODO: No matching end code found - warn!
-<span class="cstat-no" title="statement not covered">        return [ 1, "`" ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ 1, "`" ];</span>
       }
     },
 &nbsp;
-    "  \n": <span class="fstat-no" title="function not covered">function lineBreak( text ) {</span>
-<span class="cstat-no" title="statement not covered">      return [ 3, [ "linebreak" ] ];</span>
+    "  \n": <span class="fstat-no" title="function not covered" >function lineBreak( text ) {</span>
+<span class="cstat-no" title="statement not covered" >      return [ 3, [ "linebreak" ] ];</span>
     }
 &nbsp;
 };
@@ -4675,52 +4677,52 @@ function strong_em( tag, md ) {
   var state_slot = tag + "_state",
       other_slot = tag == "strong" ? "em_state" : "strong_state";
 &nbsp;
-<span class="fstat-no" title="function not covered">  function CloseTag(len) {</span>
-<span class="cstat-no" title="statement not covered">    this.len_after = len;</span>
-<span class="cstat-no" title="statement not covered">    this.name = "close_" + md;</span>
+<span class="fstat-no" title="function not covered" >  function CloseTag(len) {</span>
+<span class="cstat-no" title="statement not covered" >    this.len_after = len;</span>
+<span class="cstat-no" title="statement not covered" >    this.name = "close_" + md;</span>
   }
 &nbsp;
-  return <span class="fstat-no" title="function not covered">function ( text, orig_match ) {</span>
+  return <span class="fstat-no" title="function not covered" >function ( text, orig_match ) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if ( this[state_slot][0] == md ) {</span>
+<span class="cstat-no" title="statement not covered" >    if ( this[state_slot][0] == md ) {</span>
       // Most recent em is of this type
       //D:this.debug("closing", md);
-<span class="cstat-no" title="statement not covered">      this[state_slot].shift();</span>
+<span class="cstat-no" title="statement not covered" >      this[state_slot].shift();</span>
 &nbsp;
       // "Consume" everything to go back to the recrusion in the else-block below
-<span class="cstat-no" title="statement not covered">      return[ text.length, new CloseTag(text.length-md.length) ];</span>
+<span class="cstat-no" title="statement not covered" >      return[ text.length, new CloseTag(text.length-md.length) ];</span>
     }
     else {
       // Store a clone of the em/strong states
-<span class="cstat-no" title="statement not covered">      var other = this[other_slot].slice(),</span>
+<span class="cstat-no" title="statement not covered" >      var other = this[other_slot].slice(),</span>
           state = this[state_slot].slice();
 &nbsp;
-<span class="cstat-no" title="statement not covered">      this[state_slot].unshift(md);</span>
+<span class="cstat-no" title="statement not covered" >      this[state_slot].unshift(md);</span>
 &nbsp;
       //D:this.debug_indent += "  ";
 &nbsp;
       // Recurse
-<span class="cstat-no" title="statement not covered">      var res = this.processInline( text.substr( md.length ) );</span>
+<span class="cstat-no" title="statement not covered" >      var res = this.processInline( text.substr( md.length ) );</span>
       //D:this.debug_indent = this.debug_indent.substr(2);
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var last = res[res.length - 1];</span>
+<span class="cstat-no" title="statement not covered" >      var last = res[res.length - 1];</span>
 &nbsp;
       //D:this.debug("processInline from", tag + ": ", uneval( res ) );
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var check = this[state_slot].shift();</span>
-<span class="cstat-no" title="statement not covered">      if ( last instanceof CloseTag ) {</span>
-<span class="cstat-no" title="statement not covered">        res.pop();</span>
+<span class="cstat-no" title="statement not covered" >      var check = this[state_slot].shift();</span>
+<span class="cstat-no" title="statement not covered" >      if ( last instanceof CloseTag ) {</span>
+<span class="cstat-no" title="statement not covered" >        res.pop();</span>
         // We matched! Huzzah.
-<span class="cstat-no" title="statement not covered">        var consumed = text.length - last.len_after;</span>
-<span class="cstat-no" title="statement not covered">        return [ consumed, [ tag ].concat(res) ];</span>
+<span class="cstat-no" title="statement not covered" >        var consumed = text.length - last.len_after;</span>
+<span class="cstat-no" title="statement not covered" >        return [ consumed, [ tag ].concat(res) ];</span>
       }
       else {
         // Restore the state of the other kind. We might have mistakenly closed it.
-<span class="cstat-no" title="statement not covered">        this[other_slot] = other;</span>
-<span class="cstat-no" title="statement not covered">        this[state_slot] = state;</span>
+<span class="cstat-no" title="statement not covered" >        this[other_slot] = other;</span>
+<span class="cstat-no" title="statement not covered" >        this[state_slot] = state;</span>
 &nbsp;
         // We can't reuse the processed result as it could have wrong parsing contexts in it.
-<span class="cstat-no" title="statement not covered">        return [ md.length, md ];</span>
+<span class="cstat-no" title="statement not covered" >        return [ md.length, md ];</span>
       }
     }
   }; // End returned function
@@ -4759,38 +4761,38 @@ Markdown.buildInlinePatterns = function(d) {
   //print("patterns:", uneval( patterns ) );
 &nbsp;
   var fn = d.__call__;
-  d.__call__ = <span class="fstat-no" title="function not covered">function(text, pattern) {</span>
-<span class="cstat-no" title="statement not covered">    if ( pattern != undefined ) {</span>
-<span class="cstat-no" title="statement not covered">      return fn.call(this, text, pattern);</span>
+  d.__call__ = <span class="fstat-no" title="function not covered" >function(text, pattern) {</span>
+<span class="cstat-no" title="statement not covered" >    if ( pattern != undefined ) {</span>
+<span class="cstat-no" title="statement not covered" >      return fn.call(this, text, pattern);</span>
     }
     else
     {
-<span class="cstat-no" title="statement not covered">      return fn.call(this, text, patterns);</span>
+<span class="cstat-no" title="statement not covered" >      return fn.call(this, text, patterns);</span>
     }
   };
 };
 &nbsp;
 Markdown.DialectHelpers = {};
-Markdown.DialectHelpers.inline_until_char = <span class="fstat-no" title="function not covered">function( text, want ) {</span>
-<span class="cstat-no" title="statement not covered">  var consumed = 0,</span>
+Markdown.DialectHelpers.inline_until_char = <span class="fstat-no" title="function not covered" >function( text, want ) {</span>
+<span class="cstat-no" title="statement not covered" >  var consumed = 0,</span>
       nodes = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered">  while ( true ) {</span>
-<span class="cstat-no" title="statement not covered">    if ( text.charAt( consumed ) == want ) {</span>
+<span class="cstat-no" title="statement not covered" >  while ( true ) {</span>
+<span class="cstat-no" title="statement not covered" >    if ( text.charAt( consumed ) == want ) {</span>
       // Found the character we were looking for
-<span class="cstat-no" title="statement not covered">      consumed++;</span>
-<span class="cstat-no" title="statement not covered">      return [ consumed, nodes ];</span>
+<span class="cstat-no" title="statement not covered" >      consumed++;</span>
+<span class="cstat-no" title="statement not covered" >      return [ consumed, nodes ];</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if ( consumed &gt;= text.length ) {</span>
+<span class="cstat-no" title="statement not covered" >    if ( consumed &gt;= text.length ) {</span>
       // No closing char found. Abort.
-<span class="cstat-no" title="statement not covered">      return null;</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var res = this.dialect.inline.__oneElement__.call(this, text.substr( consumed ) );</span>
-<span class="cstat-no" title="statement not covered">    consumed += res[ 0 ];</span>
+<span class="cstat-no" title="statement not covered" >    var res = this.dialect.inline.__oneElement__.call(this, text.substr( consumed ) );</span>
+<span class="cstat-no" title="statement not covered" >    consumed += res[ 0 ];</span>
     // Add any returned nodes.
-<span class="cstat-no" title="statement not covered">    nodes.push.apply( nodes, res.slice( 1 ) );</span>
+<span class="cstat-no" title="statement not covered" >    nodes.push.apply( nodes, res.slice( 1 ) );</span>
   }
 }
 &nbsp;
@@ -4809,287 +4811,287 @@ Markdown.buildInlinePatterns( Markdown.dialects.Gruber.inline );
 &nbsp;
 Markdown.dialects.Maruku = Markdown.subclassDialect( Markdown.dialects.Gruber );
 &nbsp;
-Markdown.dialects.Maruku.processMetaHash = <span class="fstat-no" title="function not covered">function processMetaHash( meta_string ) {</span>
-<span class="cstat-no" title="statement not covered">  var meta = split_meta_hash( meta_string ),</span>
+Markdown.dialects.Maruku.processMetaHash = <span class="fstat-no" title="function not covered" >function processMetaHash( meta_string ) {</span>
+<span class="cstat-no" title="statement not covered" >  var meta = split_meta_hash( meta_string ),</span>
       attr = {};
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for ( var i = 0; i &lt; meta.length; ++i ) {</span>
+<span class="cstat-no" title="statement not covered" >  for ( var i = 0; i &lt; meta.length; ++i ) {</span>
     // id: #foo
-<span class="cstat-no" title="statement not covered">    if ( /^#/.test( meta[ i ] ) ) {</span>
-<span class="cstat-no" title="statement not covered">      attr.id = meta[ i ].substring( 1 );</span>
+<span class="cstat-no" title="statement not covered" >    if ( /^#/.test( meta[ i ] ) ) {</span>
+<span class="cstat-no" title="statement not covered" >      attr.id = meta[ i ].substring( 1 );</span>
     }
     // class: .foo
-    else <span class="cstat-no" title="statement not covered">if ( /^\./.test( meta[ i ] ) ) {</span>
+    else <span class="cstat-no" title="statement not covered" >if ( /^\./.test( meta[ i ] ) ) {</span>
       // if class already exists, append the new one
-<span class="cstat-no" title="statement not covered">      if ( attr["class"] ) {</span>
-<span class="cstat-no" title="statement not covered">        attr["class"] = attr["class"] + meta[ i ].replace( /./, " " );</span>
+<span class="cstat-no" title="statement not covered" >      if ( attr["class"] ) {</span>
+<span class="cstat-no" title="statement not covered" >        attr["class"] = attr["class"] + meta[ i ].replace( /./, " " );</span>
       }
       else {
-<span class="cstat-no" title="statement not covered">        attr["class"] = meta[ i ].substring( 1 );</span>
+<span class="cstat-no" title="statement not covered" >        attr["class"] = meta[ i ].substring( 1 );</span>
       }
     }
     // attribute: foo=bar
-    else <span class="cstat-no" title="statement not covered">if ( /\=/.test( meta[ i ] ) ) {</span>
-<span class="cstat-no" title="statement not covered">      var s = meta[ i ].split( /\=/ );</span>
-<span class="cstat-no" title="statement not covered">      attr[ s[ 0 ] ] = s[ 1 ];</span>
+    else <span class="cstat-no" title="statement not covered" >if ( /\=/.test( meta[ i ] ) ) {</span>
+<span class="cstat-no" title="statement not covered" >      var s = meta[ i ].split( /\=/ );</span>
+<span class="cstat-no" title="statement not covered" >      attr[ s[ 0 ] ] = s[ 1 ];</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return attr;</span>
+<span class="cstat-no" title="statement not covered" >  return attr;</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function split_meta_hash( meta_string ) {</span>
-<span class="cstat-no" title="statement not covered">  var meta = meta_string.split( "" ),</span>
+<span class="fstat-no" title="function not covered" >function split_meta_hash( meta_string ) {</span>
+<span class="cstat-no" title="statement not covered" >  var meta = meta_string.split( "" ),</span>
       parts = [ "" ],
       in_quotes = false;
 &nbsp;
-<span class="cstat-no" title="statement not covered">  while ( meta.length ) {</span>
-<span class="cstat-no" title="statement not covered">    var letter = meta.shift();</span>
-<span class="cstat-no" title="statement not covered">    switch ( letter ) {</span>
+<span class="cstat-no" title="statement not covered" >  while ( meta.length ) {</span>
+<span class="cstat-no" title="statement not covered" >    var letter = meta.shift();</span>
+<span class="cstat-no" title="statement not covered" >    switch ( letter ) {</span>
       case " " :
         // if we're in a quoted section, keep it
-<span class="cstat-no" title="statement not covered">        if ( in_quotes ) {</span>
-<span class="cstat-no" title="statement not covered">          parts[ parts.length - 1 ] += letter;</span>
+<span class="cstat-no" title="statement not covered" >        if ( in_quotes ) {</span>
+<span class="cstat-no" title="statement not covered" >          parts[ parts.length - 1 ] += letter;</span>
         }
         // otherwise make a new part
         else {
-<span class="cstat-no" title="statement not covered">          parts.push( "" );</span>
+<span class="cstat-no" title="statement not covered" >          parts.push( "" );</span>
         }
-<span class="cstat-no" title="statement not covered">        break;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
       case "'" :
       case '"' :
         // reverse the quotes and move straight on
-<span class="cstat-no" title="statement not covered">        in_quotes = !in_quotes;</span>
-<span class="cstat-no" title="statement not covered">        break;</span>
+<span class="cstat-no" title="statement not covered" >        in_quotes = !in_quotes;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
       case "\\" :
         // shift off the next letter to be used straight away.
         // it was escaped so we'll keep it whatever it is
-<span class="cstat-no" title="statement not covered">        letter = meta.shift();</span>
+<span class="cstat-no" title="statement not covered" >        letter = meta.shift();</span>
       default :
-<span class="cstat-no" title="statement not covered">        parts[ parts.length - 1 ] += letter;</span>
-<span class="cstat-no" title="statement not covered">        break;</span>
+<span class="cstat-no" title="statement not covered" >        parts[ parts.length - 1 ] += letter;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return parts;</span>
+<span class="cstat-no" title="statement not covered" >  return parts;</span>
 }
 &nbsp;
-Markdown.dialects.Maruku.block.document_meta = <span class="fstat-no" title="function not covered">function document_meta( block, next ) {</span>
+Markdown.dialects.Maruku.block.document_meta = <span class="fstat-no" title="function not covered" >function document_meta( block, next ) {</span>
   // we're only interested in the first block
-<span class="cstat-no" title="statement not covered">  if ( block.lineNumber &gt; 1 ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="cstat-no" title="statement not covered" >  if ( block.lineNumber &gt; 1 ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
   // document_meta blocks consist of one or more lines of `Key: Value\n`
-<span class="cstat-no" title="statement not covered">  if ( ! block.match( /^(?:\w+:.*\n)*\w+:.*$/ ) ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="cstat-no" title="statement not covered" >  if ( ! block.match( /^(?:\w+:.*\n)*\w+:.*$/ ) ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
   // make an attribute node if it doesn't exist
-<span class="cstat-no" title="statement not covered">  if ( !extract_attr( this.tree ) ) {</span>
-<span class="cstat-no" title="statement not covered">    this.tree.splice( 1, 0, {} );</span>
+<span class="cstat-no" title="statement not covered" >  if ( !extract_attr( this.tree ) ) {</span>
+<span class="cstat-no" title="statement not covered" >    this.tree.splice( 1, 0, {} );</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var pairs = block.split( /\n/ );</span>
-<span class="cstat-no" title="statement not covered">  for ( p in pairs ) {</span>
-<span class="cstat-no" title="statement not covered">    var m = pairs[ p ].match( /(\w+):\s*(.*)$/ ),</span>
+<span class="cstat-no" title="statement not covered" >  var pairs = block.split( /\n/ );</span>
+<span class="cstat-no" title="statement not covered" >  for ( p in pairs ) {</span>
+<span class="cstat-no" title="statement not covered" >    var m = pairs[ p ].match( /(\w+):\s*(.*)$/ ),</span>
         key = m[ 1 ].toLowerCase(),
         value = m[ 2 ];
 &nbsp;
-<span class="cstat-no" title="statement not covered">    this.tree[ 1 ][ key ] = value;</span>
+<span class="cstat-no" title="statement not covered" >    this.tree[ 1 ][ key ] = value;</span>
   }
 &nbsp;
   // document_meta produces no content!
-<span class="cstat-no" title="statement not covered">  return [];</span>
+<span class="cstat-no" title="statement not covered" >  return [];</span>
 };
 &nbsp;
-Markdown.dialects.Maruku.block.block_meta = <span class="fstat-no" title="function not covered">function block_meta( block, next ) {</span>
+Markdown.dialects.Maruku.block.block_meta = <span class="fstat-no" title="function not covered" >function block_meta( block, next ) {</span>
   // check if the last line of the block is an meta hash
-<span class="cstat-no" title="statement not covered">  var m = block.match( /(^|\n) {0,3}\{:\s*((?:\\\}|[^\}])*)\s*\}$/ );</span>
-<span class="cstat-no" title="statement not covered">  if ( !m ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="cstat-no" title="statement not covered" >  var m = block.match( /(^|\n) {0,3}\{:\s*((?:\\\}|[^\}])*)\s*\}$/ );</span>
+<span class="cstat-no" title="statement not covered" >  if ( !m ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
   // process the meta hash
-<span class="cstat-no" title="statement not covered">  var attr = this.dialect.processMetaHash( m[ 2 ] );</span>
+<span class="cstat-no" title="statement not covered" >  var attr = this.dialect.processMetaHash( m[ 2 ] );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var hash;</span>
+<span class="cstat-no" title="statement not covered" >  var hash;</span>
 &nbsp;
   // if we matched ^ then we need to apply meta to the previous block
-<span class="cstat-no" title="statement not covered">  if ( m[ 1 ] === "" ) {</span>
-<span class="cstat-no" title="statement not covered">    var node = this.tree[ this.tree.length - 1 ];</span>
-<span class="cstat-no" title="statement not covered">    hash = extract_attr( node );</span>
+<span class="cstat-no" title="statement not covered" >  if ( m[ 1 ] === "" ) {</span>
+<span class="cstat-no" title="statement not covered" >    var node = this.tree[ this.tree.length - 1 ];</span>
+<span class="cstat-no" title="statement not covered" >    hash = extract_attr( node );</span>
 &nbsp;
     // if the node is a string (rather than JsonML), bail
-<span class="cstat-no" title="statement not covered">    if ( typeof node === "string" ) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="cstat-no" title="statement not covered" >    if ( typeof node === "string" ) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
 &nbsp;
     // create the attribute hash if it doesn't exist
-<span class="cstat-no" title="statement not covered">    if ( !hash ) {</span>
-<span class="cstat-no" title="statement not covered">      hash = {};</span>
-<span class="cstat-no" title="statement not covered">      node.splice( 1, 0, hash );</span>
+<span class="cstat-no" title="statement not covered" >    if ( !hash ) {</span>
+<span class="cstat-no" title="statement not covered" >      hash = {};</span>
+<span class="cstat-no" title="statement not covered" >      node.splice( 1, 0, hash );</span>
     }
 &nbsp;
     // add the attributes in
-<span class="cstat-no" title="statement not covered">    for ( a in attr ) {</span>
-<span class="cstat-no" title="statement not covered">      hash[ a ] = attr[ a ];</span>
+<span class="cstat-no" title="statement not covered" >    for ( a in attr ) {</span>
+<span class="cstat-no" title="statement not covered" >      hash[ a ] = attr[ a ];</span>
     }
 &nbsp;
     // return nothing so the meta hash is removed
-<span class="cstat-no" title="statement not covered">    return [];</span>
+<span class="cstat-no" title="statement not covered" >    return [];</span>
   }
 &nbsp;
   // pull the meta hash off the block and process what's left
-<span class="cstat-no" title="statement not covered">  var b = block.replace( /\n.*$/, "" ),</span>
+<span class="cstat-no" title="statement not covered" >  var b = block.replace( /\n.*$/, "" ),</span>
       result = this.processBlock( b, [] );
 &nbsp;
   // get or make the attributes hash
-<span class="cstat-no" title="statement not covered">  hash = extract_attr( result[ 0 ] );</span>
-<span class="cstat-no" title="statement not covered">  if ( !hash ) {</span>
-<span class="cstat-no" title="statement not covered">    hash = {};</span>
-<span class="cstat-no" title="statement not covered">    result[ 0 ].splice( 1, 0, hash );</span>
+<span class="cstat-no" title="statement not covered" >  hash = extract_attr( result[ 0 ] );</span>
+<span class="cstat-no" title="statement not covered" >  if ( !hash ) {</span>
+<span class="cstat-no" title="statement not covered" >    hash = {};</span>
+<span class="cstat-no" title="statement not covered" >    result[ 0 ].splice( 1, 0, hash );</span>
   }
 &nbsp;
   // attach the attributes to the block
-<span class="cstat-no" title="statement not covered">  for ( a in attr ) {</span>
-<span class="cstat-no" title="statement not covered">    hash[ a ] = attr[ a ];</span>
+<span class="cstat-no" title="statement not covered" >  for ( a in attr ) {</span>
+<span class="cstat-no" title="statement not covered" >    hash[ a ] = attr[ a ];</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return result;</span>
+<span class="cstat-no" title="statement not covered" >  return result;</span>
 };
 &nbsp;
-Markdown.dialects.Maruku.block.definition_list = <span class="fstat-no" title="function not covered">function definition_list( block, next ) {</span>
+Markdown.dialects.Maruku.block.definition_list = <span class="fstat-no" title="function not covered" >function definition_list( block, next ) {</span>
   // one or more terms followed by one or more definitions, in a single block
-<span class="cstat-no" title="statement not covered">  var tight = /^((?:[^\s:].*\n)+):\s+([\s\S]+)$/,</span>
+<span class="cstat-no" title="statement not covered" >  var tight = /^((?:[^\s:].*\n)+):\s+([\s\S]+)$/,</span>
       list = [ "dl" ],
       i, m;
 &nbsp;
   // see if we're dealing with a tight or loose block
-<span class="cstat-no" title="statement not covered">  if ( ( m = block.match( tight ) ) ) {</span>
+<span class="cstat-no" title="statement not covered" >  if ( ( m = block.match( tight ) ) ) {</span>
     // pull subsequent tight DL blocks out of `next`
-<span class="cstat-no" title="statement not covered">    var blocks = [ block ];</span>
-<span class="cstat-no" title="statement not covered">    while ( next.length &amp;&amp; tight.exec( next[ 0 ] ) ) {</span>
-<span class="cstat-no" title="statement not covered">      blocks.push( next.shift() );</span>
+<span class="cstat-no" title="statement not covered" >    var blocks = [ block ];</span>
+<span class="cstat-no" title="statement not covered" >    while ( next.length &amp;&amp; tight.exec( next[ 0 ] ) ) {</span>
+<span class="cstat-no" title="statement not covered" >      blocks.push( next.shift() );</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    for ( var b = 0; b &lt; blocks.length; ++b ) {</span>
-<span class="cstat-no" title="statement not covered">      var m = blocks[ b ].match( tight ),</span>
+<span class="cstat-no" title="statement not covered" >    for ( var b = 0; b &lt; blocks.length; ++b ) {</span>
+<span class="cstat-no" title="statement not covered" >      var m = blocks[ b ].match( tight ),</span>
           terms = m[ 1 ].replace( /\n$/, "" ).split( /\n/ ),
           defns = m[ 2 ].split( /\n:\s+/ );
 &nbsp;
       // print( uneval( m ) );
 &nbsp;
-<span class="cstat-no" title="statement not covered">      for ( i = 0; i &lt; terms.length; ++i ) {</span>
-<span class="cstat-no" title="statement not covered">        list.push( [ "dt", terms[ i ] ] );</span>
+<span class="cstat-no" title="statement not covered" >      for ( i = 0; i &lt; terms.length; ++i ) {</span>
+<span class="cstat-no" title="statement not covered" >        list.push( [ "dt", terms[ i ] ] );</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      for ( i = 0; i &lt; defns.length; ++i ) {</span>
+<span class="cstat-no" title="statement not covered" >      for ( i = 0; i &lt; defns.length; ++i ) {</span>
         // run inline processing over the definition
-<span class="cstat-no" title="statement not covered">        list.push( [ "dd" ].concat( this.processInline( defns[ i ].replace( /(\n)\s+/, "$1" ) ) ) );</span>
+<span class="cstat-no" title="statement not covered" >        list.push( [ "dd" ].concat( this.processInline( defns[ i ].replace( /(\n)\s+/, "$1" ) ) ) );</span>
       }
     }
   }
   else {
-<span class="cstat-no" title="statement not covered">    return undefined;</span>
+<span class="cstat-no" title="statement not covered" >    return undefined;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return [ list ];</span>
+<span class="cstat-no" title="statement not covered" >  return [ list ];</span>
 };
 &nbsp;
 // splits on unescaped instances of @ch. If @ch is not a character the result
 // can be unpredictable
 &nbsp;
-Markdown.dialects.Maruku.block.table = <span class="fstat-no" title="function not covered">function table (block, next) {</span>
+Markdown.dialects.Maruku.block.table = <span class="fstat-no" title="function not covered" >function table (block, next) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var _split_on_unescaped = <span class="fstat-no" title="function not covered">function(s, ch) {</span></span>
-<span class="cstat-no" title="statement not covered">        ch = ch || '\\s';</span>
-<span class="cstat-no" title="statement not covered">        if (ch.match(/^[\\|\[\]{}?*.+^$]$/)) { <span class="cstat-no" title="statement not covered">ch = '\\' + ch; </span>}</span>
-<span class="cstat-no" title="statement not covered">        var res = [ ],</span>
+<span class="cstat-no" title="statement not covered" >    var _split_on_unescaped = <span class="fstat-no" title="function not covered" >function(s, ch) {</span></span>
+<span class="cstat-no" title="statement not covered" >        ch = ch || '\\s';</span>
+<span class="cstat-no" title="statement not covered" >        if (ch.match(/^[\\|\[\]{}?*.+^$]$/)) { <span class="cstat-no" title="statement not covered" >ch = '\\' + ch; </span>}</span>
+<span class="cstat-no" title="statement not covered" >        var res = [ ],</span>
             r = new RegExp('^((?:\\\\.|[^\\\\' + ch + '])*)' + ch + '(.*)'),
             m;
-<span class="cstat-no" title="statement not covered">        while(m = s.match(r)) {</span>
-<span class="cstat-no" title="statement not covered">            res.push(m[1]);</span>
-<span class="cstat-no" title="statement not covered">            s = m[2];</span>
+<span class="cstat-no" title="statement not covered" >        while(m = s.match(r)) {</span>
+<span class="cstat-no" title="statement not covered" >            res.push(m[1]);</span>
+<span class="cstat-no" title="statement not covered" >            s = m[2];</span>
         }
-<span class="cstat-no" title="statement not covered">        res.push(s);</span>
-<span class="cstat-no" title="statement not covered">        return res;</span>
+<span class="cstat-no" title="statement not covered" >        res.push(s);</span>
+<span class="cstat-no" title="statement not covered" >        return res;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var leading_pipe = /^ {0,3}\|(.+)\n {0,3}\|\s*([\-:]+[\-| :]*)\n((?:\s*\|.*(?:\n|$))*)(?=\n|$)/,</span>
+<span class="cstat-no" title="statement not covered" >    var leading_pipe = /^ {0,3}\|(.+)\n {0,3}\|\s*([\-:]+[\-| :]*)\n((?:\s*\|.*(?:\n|$))*)(?=\n|$)/,</span>
         // find at least an unescaped pipe in each line
         no_leading_pipe = /^ {0,3}(\S(?:\\.|[^\\|])*\|.*)\n {0,3}([\-:]+\s*\|[\-| :]*)\n((?:(?:\\.|[^\\|])*\|.*(?:\n|$))*)(?=\n|$)/,
         i, m;
-<span class="cstat-no" title="statement not covered">    if (m = block.match(leading_pipe)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (m = block.match(leading_pipe)) {</span>
         // remove leading pipes in contents
         // (header and horizontal rule already have the leading pipe left out)
-<span class="cstat-no" title="statement not covered">        m[3] = m[3].replace(/^\s*\|/gm, '');</span>
-    } else <span class="cstat-no" title="statement not covered">if (! ( m = block.match(no_leading_pipe))) {</span>
-<span class="cstat-no" title="statement not covered">        return undefined;</span>
+<span class="cstat-no" title="statement not covered" >        m[3] = m[3].replace(/^\s*\|/gm, '');</span>
+    } else <span class="cstat-no" title="statement not covered" >if (! ( m = block.match(no_leading_pipe))) {</span>
+<span class="cstat-no" title="statement not covered" >        return undefined;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var table = [ "table", [ "thead", [ "tr" ] ], [ "tbody" ] ];</span>
+<span class="cstat-no" title="statement not covered" >    var table = [ "table", [ "thead", [ "tr" ] ], [ "tbody" ] ];</span>
 &nbsp;
     // remove trailing pipes, then split on pipes
     // (no escaped pipes are allowed in horizontal rule)
-<span class="cstat-no" title="statement not covered">    m[2] = m[2].replace(/\|\s*$/, '').split('|');</span>
+<span class="cstat-no" title="statement not covered" >    m[2] = m[2].replace(/\|\s*$/, '').split('|');</span>
 &nbsp;
     // process alignment
-<span class="cstat-no" title="statement not covered">    var html_attrs = [ ];</span>
-<span class="cstat-no" title="statement not covered">    forEach (m[2], <span class="fstat-no" title="function not covered">function (s) {</span></span>
-<span class="cstat-no" title="statement not covered">        if (s.match(/^\s*-+:\s*$/))       <span class="cstat-no" title="statement not covered">html_attrs.push({align: "right"});</span></span>
-        else <span class="cstat-no" title="statement not covered">if (s.match(/^\s*:-+\s*$/))  <span class="cstat-no" title="statement not covered">html_attrs.push({align: "left"});</span></span>
-        else <span class="cstat-no" title="statement not covered">if (s.match(/^\s*:-+:\s*$/)) <span class="cstat-no" title="statement not covered">html_attrs.push({align: "center"});</span></span>
-        else                              <span class="cstat-no" title="statement not covered">html_attrs.push({});</span>
+<span class="cstat-no" title="statement not covered" >    var html_attrs = [ ];</span>
+<span class="cstat-no" title="statement not covered" >    forEach (m[2], <span class="fstat-no" title="function not covered" >function (s) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (s.match(/^\s*-+:\s*$/))       <span class="cstat-no" title="statement not covered" >html_attrs.push({align: "right"});</span></span>
+        else <span class="cstat-no" title="statement not covered" >if (s.match(/^\s*:-+\s*$/))  <span class="cstat-no" title="statement not covered" >html_attrs.push({align: "left"});</span></span>
+        else <span class="cstat-no" title="statement not covered" >if (s.match(/^\s*:-+:\s*$/)) <span class="cstat-no" title="statement not covered" >html_attrs.push({align: "center"});</span></span>
+        else                              <span class="cstat-no" title="statement not covered" >html_attrs.push({});</span>
     });
 &nbsp;
     // now for the header, avoid escaped pipes
-<span class="cstat-no" title="statement not covered">    m[1] = _split_on_unescaped(m[1].replace(/\|\s*$/, ''), '|');</span>
-<span class="cstat-no" title="statement not covered">    for (i = 0; i &lt; m[1].length; i++) {</span>
-<span class="cstat-no" title="statement not covered">        table[1][1].push(['th', html_attrs[i] || {}].concat(</span>
+<span class="cstat-no" title="statement not covered" >    m[1] = _split_on_unescaped(m[1].replace(/\|\s*$/, ''), '|');</span>
+<span class="cstat-no" title="statement not covered" >    for (i = 0; i &lt; m[1].length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        table[1][1].push(['th', html_attrs[i] || {}].concat(</span>
             this.processInline(m[1][i].trim())));
     }
 &nbsp;
     // now for body contents
-<span class="cstat-no" title="statement not covered">    forEach (m[3].replace(/\|\s*$/mg, '').split('\n'), <span class="fstat-no" title="function not covered">function (row) {</span></span>
-<span class="cstat-no" title="statement not covered">        var html_row = ['tr'];</span>
-<span class="cstat-no" title="statement not covered">        row = _split_on_unescaped(row, '|');</span>
-<span class="cstat-no" title="statement not covered">        for (i = 0; i &lt; row.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">            html_row.push(['td', html_attrs[i] || {}].concat(this.processInline(row[i].trim())));</span>
+<span class="cstat-no" title="statement not covered" >    forEach (m[3].replace(/\|\s*$/mg, '').split('\n'), <span class="fstat-no" title="function not covered" >function (row) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var html_row = ['tr'];</span>
+<span class="cstat-no" title="statement not covered" >        row = _split_on_unescaped(row, '|');</span>
+<span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; row.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            html_row.push(['td', html_attrs[i] || {}].concat(this.processInline(row[i].trim())));</span>
         }
-<span class="cstat-no" title="statement not covered">        table[2].push(html_row);</span>
+<span class="cstat-no" title="statement not covered" >        table[2].push(html_row);</span>
     }, this);
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return [table];</span>
+<span class="cstat-no" title="statement not covered" >    return [table];</span>
 }
 &nbsp;
-Markdown.dialects.Maruku.inline[ "{:" ] = <span class="fstat-no" title="function not covered">function inline_meta( text, matches, out ) {</span>
-<span class="cstat-no" title="statement not covered">  if ( !out.length ) {</span>
-<span class="cstat-no" title="statement not covered">    return [ 2, "{:" ];</span>
+Markdown.dialects.Maruku.inline[ "{:" ] = <span class="fstat-no" title="function not covered" >function inline_meta( text, matches, out ) {</span>
+<span class="cstat-no" title="statement not covered" >  if ( !out.length ) {</span>
+<span class="cstat-no" title="statement not covered" >    return [ 2, "{:" ];</span>
   }
 &nbsp;
   // get the preceeding element
-<span class="cstat-no" title="statement not covered">  var before = out[ out.length - 1 ];</span>
+<span class="cstat-no" title="statement not covered" >  var before = out[ out.length - 1 ];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( typeof before === "string" ) {</span>
-<span class="cstat-no" title="statement not covered">    return [ 2, "{:" ];</span>
+<span class="cstat-no" title="statement not covered" >  if ( typeof before === "string" ) {</span>
+<span class="cstat-no" title="statement not covered" >    return [ 2, "{:" ];</span>
   }
 &nbsp;
   // match a meta hash
-<span class="cstat-no" title="statement not covered">  var m = text.match( /^\{:\s*((?:\\\}|[^\}])*)\s*\}/ );</span>
+<span class="cstat-no" title="statement not covered" >  var m = text.match( /^\{:\s*((?:\\\}|[^\}])*)\s*\}/ );</span>
 &nbsp;
   // no match, false alarm
-<span class="cstat-no" title="statement not covered">  if ( !m ) {</span>
-<span class="cstat-no" title="statement not covered">    return [ 2, "{:" ];</span>
+<span class="cstat-no" title="statement not covered" >  if ( !m ) {</span>
+<span class="cstat-no" title="statement not covered" >    return [ 2, "{:" ];</span>
   }
 &nbsp;
   // attach the attributes to the preceeding element
-<span class="cstat-no" title="statement not covered">  var meta = this.dialect.processMetaHash( m[ 1 ] ),</span>
+<span class="cstat-no" title="statement not covered" >  var meta = this.dialect.processMetaHash( m[ 1 ] ),</span>
       attr = extract_attr( before );
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( !attr ) {</span>
-<span class="cstat-no" title="statement not covered">    attr = {};</span>
-<span class="cstat-no" title="statement not covered">    before.splice( 1, 0, attr );</span>
+<span class="cstat-no" title="statement not covered" >  if ( !attr ) {</span>
+<span class="cstat-no" title="statement not covered" >    attr = {};</span>
+<span class="cstat-no" title="statement not covered" >    before.splice( 1, 0, attr );</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for ( var k in meta ) {</span>
-<span class="cstat-no" title="statement not covered">    attr[ k ] = meta[ k ];</span>
+<span class="cstat-no" title="statement not covered" >  for ( var k in meta ) {</span>
+<span class="cstat-no" title="statement not covered" >    attr[ k ] = meta[ k ];</span>
   }
 &nbsp;
   // cut out the string and replace it with nothing
-<span class="cstat-no" title="statement not covered">  return [ m[ 0 ].length, "" ];</span>
+<span class="cstat-no" title="statement not covered" >  return [ m[ 0 ].length, "" ];</span>
 };
 &nbsp;
 Markdown.dialects.Maruku.inline.__escape__ = /^\\[\\`\*_{}\[\]()#\+.!\-|:]/;
@@ -5097,37 +5099,37 @@ Markdown.dialects.Maruku.inline.__escape__ = /^\\[\\`\*_{}\[\]()#\+.!\-|:]/;
 Markdown.buildBlockOrder ( Markdown.dialects.Maruku.block );
 Markdown.buildInlinePatterns( Markdown.dialects.Maruku.inline );
 &nbsp;
-var isArray = Array.isArray || <span class="fstat-no" title="function not covered"><span class="branch-1 cbranch-no" title="branch not covered">function(obj) {</span></span>
-<span class="cstat-no" title="statement not covered">  return Object.prototype.toString.call(obj) == "[object Array]";</span>
+var isArray = Array.isArray || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function(obj) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return Object.prototype.toString.call(obj) == "[object Array]";</span>
 };
 &nbsp;
 var forEach;
 // Don't mess with Array.prototype. Its not friendly
-<span class="missing-if-branch" title="else path not taken">E</span>if ( Array.prototype.forEach ) {
-  forEach = <span class="fstat-no" title="function not covered">function( arr, cb, thisp ) {</span>
-<span class="cstat-no" title="statement not covered">    return arr.forEach( cb, thisp );</span>
+<span class="missing-if-branch" title="else path not taken" >E</span>if ( Array.prototype.forEach ) {
+  forEach = <span class="fstat-no" title="function not covered" >function( arr, cb, thisp ) {</span>
+<span class="cstat-no" title="statement not covered" >    return arr.forEach( cb, thisp );</span>
   };
 }
 else {
-<span class="cstat-no" title="statement not covered">  forEach = <span class="fstat-no" title="function not covered">function(arr, cb, thisp) {</span></span>
-<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; arr.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">      cb.call(thisp || arr, arr[i], i, arr);</span>
+<span class="cstat-no" title="statement not covered" >  forEach = <span class="fstat-no" title="function not covered" >function(arr, cb, thisp) {</span></span>
+<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; arr.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      cb.call(thisp || arr, arr[i], i, arr);</span>
     }
   }
 }
 &nbsp;
-var isEmpty = <span class="fstat-no" title="function not covered">function( obj ) {</span>
-<span class="cstat-no" title="statement not covered">  for ( var key in obj ) {</span>
-<span class="cstat-no" title="statement not covered">    if ( hasOwnProperty.call( obj, key ) ) {</span>
-<span class="cstat-no" title="statement not covered">      return false;</span>
+var isEmpty = <span class="fstat-no" title="function not covered" >function( obj ) {</span>
+<span class="cstat-no" title="statement not covered" >  for ( var key in obj ) {</span>
+<span class="cstat-no" title="statement not covered" >    if ( hasOwnProperty.call( obj, key ) ) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return true;</span>
+<span class="cstat-no" title="statement not covered" >  return true;</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function extract_attr( jsonml ) {</span>
-<span class="cstat-no" title="statement not covered">  return isArray(jsonml)</span>
+<span class="fstat-no" title="function not covered" >function extract_attr( jsonml ) {</span>
+<span class="cstat-no" title="statement not covered" >  return isArray(jsonml)</span>
       &amp;&amp; jsonml.length &gt; 1
       &amp;&amp; typeof jsonml[ 1 ] === "object"
       &amp;&amp; !( isArray(jsonml[ 1 ]) )
@@ -5150,240 +5152,240 @@ var isEmpty = <span class="fstat-no" title="function not covered">function( obj 
  *    output, or just its children. The default `false` is to not include the
  *    root itself.
  */
-expose.renderJsonML = <span class="fstat-no" title="function not covered">function( jsonml, options ) {</span>
-<span class="cstat-no" title="statement not covered">  options = options || {};</span>
+expose.renderJsonML = <span class="fstat-no" title="function not covered" >function( jsonml, options ) {</span>
+<span class="cstat-no" title="statement not covered" >  options = options || {};</span>
   // include the root element in the rendered output?
-<span class="cstat-no" title="statement not covered">  options.root = options.root || false;</span>
+<span class="cstat-no" title="statement not covered" >  options.root = options.root || false;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var content = [];</span>
+<span class="cstat-no" title="statement not covered" >  var content = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( options.root ) {</span>
-<span class="cstat-no" title="statement not covered">    content.push( render_tree( jsonml ) );</span>
+<span class="cstat-no" title="statement not covered" >  if ( options.root ) {</span>
+<span class="cstat-no" title="statement not covered" >    content.push( render_tree( jsonml ) );</span>
   }
   else {
-<span class="cstat-no" title="statement not covered">    jsonml.shift(); </span>// get rid of the tag
-<span class="cstat-no" title="statement not covered">    if ( jsonml.length &amp;&amp; typeof jsonml[ 0 ] === "object" &amp;&amp; !( jsonml[ 0 ] instanceof Array ) ) {</span>
-<span class="cstat-no" title="statement not covered">      jsonml.shift(); </span>// get rid of the attributes
+<span class="cstat-no" title="statement not covered" >    jsonml.shift(); </span>// get rid of the tag
+<span class="cstat-no" title="statement not covered" >    if ( jsonml.length &amp;&amp; typeof jsonml[ 0 ] === "object" &amp;&amp; !( jsonml[ 0 ] instanceof Array ) ) {</span>
+<span class="cstat-no" title="statement not covered" >      jsonml.shift(); </span>// get rid of the attributes
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    while ( jsonml.length ) {</span>
-<span class="cstat-no" title="statement not covered">      content.push( render_tree( jsonml.shift() ) );</span>
+<span class="cstat-no" title="statement not covered" >    while ( jsonml.length ) {</span>
+<span class="cstat-no" title="statement not covered" >      content.push( render_tree( jsonml.shift() ) );</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return content.join( "\n\n" );</span>
+<span class="cstat-no" title="statement not covered" >  return content.join( "\n\n" );</span>
 };
 &nbsp;
-<span class="fstat-no" title="function not covered">function escapeHTML( text ) {</span>
-<span class="cstat-no" title="statement not covered">  return text.replace( /&amp;/g, "&amp;amp;" )</span>
+<span class="fstat-no" title="function not covered" >function escapeHTML( text ) {</span>
+<span class="cstat-no" title="statement not covered" >  return text.replace( /&amp;/g, "&amp;amp;" )</span>
              .replace( /&lt;/g, "&amp;lt;" )
              .replace( /&gt;/g, "&amp;gt;" )
              .replace( /"/g, "&amp;quot;" )
              .replace( /'/g, "&amp;#39;" );
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function render_tree( jsonml ) {</span>
+<span class="fstat-no" title="function not covered" >function render_tree( jsonml ) {</span>
   // basic case
-<span class="cstat-no" title="statement not covered">  if ( typeof jsonml === "string" ) {</span>
-<span class="cstat-no" title="statement not covered">    return escapeHTML( jsonml );</span>
+<span class="cstat-no" title="statement not covered" >  if ( typeof jsonml === "string" ) {</span>
+<span class="cstat-no" title="statement not covered" >    return escapeHTML( jsonml );</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var tag = jsonml.shift(),</span>
+<span class="cstat-no" title="statement not covered" >  var tag = jsonml.shift(),</span>
       attributes = {},
       content = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( jsonml.length &amp;&amp; typeof jsonml[ 0 ] === "object" &amp;&amp; !( jsonml[ 0 ] instanceof Array ) ) {</span>
-<span class="cstat-no" title="statement not covered">    attributes = jsonml.shift();</span>
+<span class="cstat-no" title="statement not covered" >  if ( jsonml.length &amp;&amp; typeof jsonml[ 0 ] === "object" &amp;&amp; !( jsonml[ 0 ] instanceof Array ) ) {</span>
+<span class="cstat-no" title="statement not covered" >    attributes = jsonml.shift();</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  while ( jsonml.length ) {</span>
-<span class="cstat-no" title="statement not covered">    content.push( render_tree( jsonml.shift() ) );</span>
+<span class="cstat-no" title="statement not covered" >  while ( jsonml.length ) {</span>
+<span class="cstat-no" title="statement not covered" >    content.push( render_tree( jsonml.shift() ) );</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var tag_attrs = "";</span>
-<span class="cstat-no" title="statement not covered">  for ( var a in attributes ) {</span>
-<span class="cstat-no" title="statement not covered">    tag_attrs += " " + a + '="' + escapeHTML( attributes[ a ] ) + '"';</span>
+<span class="cstat-no" title="statement not covered" >  var tag_attrs = "";</span>
+<span class="cstat-no" title="statement not covered" >  for ( var a in attributes ) {</span>
+<span class="cstat-no" title="statement not covered" >    tag_attrs += " " + a + '="' + escapeHTML( attributes[ a ] ) + '"';</span>
   }
 &nbsp;
   // be careful about adding whitespace here for inline elements
-<span class="cstat-no" title="statement not covered">  if ( tag == "img" || tag == "br" || tag == "hr" ) {</span>
-<span class="cstat-no" title="statement not covered">    return "&lt;"+ tag + tag_attrs + "/&gt;";</span>
+<span class="cstat-no" title="statement not covered" >  if ( tag == "img" || tag == "br" || tag == "hr" ) {</span>
+<span class="cstat-no" title="statement not covered" >    return "&lt;"+ tag + tag_attrs + "/&gt;";</span>
   }
   else {
-<span class="cstat-no" title="statement not covered">    return "&lt;"+ tag + tag_attrs + "&gt;" + content.join( "" ) + "&lt;/" + tag + "&gt;";</span>
+<span class="cstat-no" title="statement not covered" >    return "&lt;"+ tag + tag_attrs + "&gt;" + content.join( "" ) + "&lt;/" + tag + "&gt;";</span>
   }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function convert_tree_to_html( tree, references, options ) {</span>
-<span class="cstat-no" title="statement not covered">  var i;</span>
-<span class="cstat-no" title="statement not covered">  options = options || {};</span>
+<span class="fstat-no" title="function not covered" >function convert_tree_to_html( tree, references, options ) {</span>
+<span class="cstat-no" title="statement not covered" >  var i;</span>
+<span class="cstat-no" title="statement not covered" >  options = options || {};</span>
 &nbsp;
   // shallow clone
-<span class="cstat-no" title="statement not covered">  var jsonml = tree.slice( 0 );</span>
+<span class="cstat-no" title="statement not covered" >  var jsonml = tree.slice( 0 );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if ( typeof options.preprocessTreeNode === "function" ) {</span>
-<span class="cstat-no" title="statement not covered">      jsonml = options.preprocessTreeNode(jsonml, references);</span>
+<span class="cstat-no" title="statement not covered" >  if ( typeof options.preprocessTreeNode === "function" ) {</span>
+<span class="cstat-no" title="statement not covered" >      jsonml = options.preprocessTreeNode(jsonml, references);</span>
   }
 &nbsp;
   // Clone attributes if they exist
-<span class="cstat-no" title="statement not covered">  var attrs = extract_attr( jsonml );</span>
-<span class="cstat-no" title="statement not covered">  if ( attrs ) {</span>
-<span class="cstat-no" title="statement not covered">    jsonml[ 1 ] = {};</span>
-<span class="cstat-no" title="statement not covered">    for ( i in attrs ) {</span>
-<span class="cstat-no" title="statement not covered">      jsonml[ 1 ][ i ] = attrs[ i ];</span>
+<span class="cstat-no" title="statement not covered" >  var attrs = extract_attr( jsonml );</span>
+<span class="cstat-no" title="statement not covered" >  if ( attrs ) {</span>
+<span class="cstat-no" title="statement not covered" >    jsonml[ 1 ] = {};</span>
+<span class="cstat-no" title="statement not covered" >    for ( i in attrs ) {</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 1 ][ i ] = attrs[ i ];</span>
     }
-<span class="cstat-no" title="statement not covered">    attrs = jsonml[ 1 ];</span>
+<span class="cstat-no" title="statement not covered" >    attrs = jsonml[ 1 ];</span>
   }
 &nbsp;
   // basic case
-<span class="cstat-no" title="statement not covered">  if ( typeof jsonml === "string" ) {</span>
-<span class="cstat-no" title="statement not covered">    return jsonml;</span>
+<span class="cstat-no" title="statement not covered" >  if ( typeof jsonml === "string" ) {</span>
+<span class="cstat-no" title="statement not covered" >    return jsonml;</span>
   }
 &nbsp;
   // convert this node
-<span class="cstat-no" title="statement not covered">  switch ( jsonml[ 0 ] ) {</span>
+<span class="cstat-no" title="statement not covered" >  switch ( jsonml[ 0 ] ) {</span>
     case "header":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "h" + jsonml[ 1 ].level;</span>
-<span class="cstat-no" title="statement not covered">      delete jsonml[ 1 ].level;</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "h" + jsonml[ 1 ].level;</span>
+<span class="cstat-no" title="statement not covered" >      delete jsonml[ 1 ].level;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "bulletlist":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "ul";</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "ul";</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "numberlist":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "ol";</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "ol";</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "listitem":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "li";</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "li";</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "para":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "p";</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "p";</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "markdown":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "html";</span>
-<span class="cstat-no" title="statement not covered">      if ( attrs ) <span class="cstat-no" title="statement not covered">delete attrs.references;</span></span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "html";</span>
+<span class="cstat-no" title="statement not covered" >      if ( attrs ) <span class="cstat-no" title="statement not covered" >delete attrs.references;</span></span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "code_block":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "pre";</span>
-<span class="cstat-no" title="statement not covered">      i = attrs ? 2 : 1;</span>
-<span class="cstat-no" title="statement not covered">      var code = [ "code" ];</span>
-<span class="cstat-no" title="statement not covered">      code.push.apply( code, jsonml.splice( i, jsonml.length - i ) );</span>
-<span class="cstat-no" title="statement not covered">      jsonml[ i ] = code;</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "pre";</span>
+<span class="cstat-no" title="statement not covered" >      i = attrs ? 2 : 1;</span>
+<span class="cstat-no" title="statement not covered" >      var code = [ "code" ];</span>
+<span class="cstat-no" title="statement not covered" >      code.push.apply( code, jsonml.splice( i, jsonml.length - i ) );</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ i ] = code;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "inlinecode":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "code";</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "code";</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "img":
-<span class="cstat-no" title="statement not covered">      jsonml[ 1 ].src = jsonml[ 1 ].href;</span>
-<span class="cstat-no" title="statement not covered">      delete jsonml[ 1 ].href;</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 1 ].src = jsonml[ 1 ].href;</span>
+<span class="cstat-no" title="statement not covered" >      delete jsonml[ 1 ].href;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "linebreak":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "br";</span>
-<span class="cstat-no" title="statement not covered">    break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "br";</span>
+<span class="cstat-no" title="statement not covered" >    break;</span>
     case "link":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "a";</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "a";</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "link_ref":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "a";</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "a";</span>
 &nbsp;
       // grab this ref and clean up the attribute node
-<span class="cstat-no" title="statement not covered">      var ref = references[ attrs.ref ];</span>
+<span class="cstat-no" title="statement not covered" >      var ref = references[ attrs.ref ];</span>
 &nbsp;
       // if the reference exists, make the link
-<span class="cstat-no" title="statement not covered">      if ( ref ) {</span>
-<span class="cstat-no" title="statement not covered">        delete attrs.ref;</span>
+<span class="cstat-no" title="statement not covered" >      if ( ref ) {</span>
+<span class="cstat-no" title="statement not covered" >        delete attrs.ref;</span>
 &nbsp;
         // add in the href and title, if present
-<span class="cstat-no" title="statement not covered">        attrs.href = ref.href;</span>
-<span class="cstat-no" title="statement not covered">        if ( ref.title ) {</span>
-<span class="cstat-no" title="statement not covered">          attrs.title = ref.title;</span>
+<span class="cstat-no" title="statement not covered" >        attrs.href = ref.href;</span>
+<span class="cstat-no" title="statement not covered" >        if ( ref.title ) {</span>
+<span class="cstat-no" title="statement not covered" >          attrs.title = ref.title;</span>
         }
 &nbsp;
         // get rid of the unneeded original text
-<span class="cstat-no" title="statement not covered">        delete attrs.original;</span>
+<span class="cstat-no" title="statement not covered" >        delete attrs.original;</span>
       }
       // the reference doesn't exist, so revert to plain text
       else {
-<span class="cstat-no" title="statement not covered">        return attrs.original;</span>
+<span class="cstat-no" title="statement not covered" >        return attrs.original;</span>
       }
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case "img_ref":
-<span class="cstat-no" title="statement not covered">      jsonml[ 0 ] = "img";</span>
+<span class="cstat-no" title="statement not covered" >      jsonml[ 0 ] = "img";</span>
 &nbsp;
       // grab this ref and clean up the attribute node
-<span class="cstat-no" title="statement not covered">      var ref = references[ attrs.ref ];</span>
+<span class="cstat-no" title="statement not covered" >      var ref = references[ attrs.ref ];</span>
 &nbsp;
       // if the reference exists, make the link
-<span class="cstat-no" title="statement not covered">      if ( ref ) {</span>
-<span class="cstat-no" title="statement not covered">        delete attrs.ref;</span>
+<span class="cstat-no" title="statement not covered" >      if ( ref ) {</span>
+<span class="cstat-no" title="statement not covered" >        delete attrs.ref;</span>
 &nbsp;
         // add in the href and title, if present
-<span class="cstat-no" title="statement not covered">        attrs.src = ref.href;</span>
-<span class="cstat-no" title="statement not covered">        if ( ref.title ) {</span>
-<span class="cstat-no" title="statement not covered">          attrs.title = ref.title;</span>
+<span class="cstat-no" title="statement not covered" >        attrs.src = ref.href;</span>
+<span class="cstat-no" title="statement not covered" >        if ( ref.title ) {</span>
+<span class="cstat-no" title="statement not covered" >          attrs.title = ref.title;</span>
         }
 &nbsp;
         // get rid of the unneeded original text
-<span class="cstat-no" title="statement not covered">        delete attrs.original;</span>
+<span class="cstat-no" title="statement not covered" >        delete attrs.original;</span>
       }
       // the reference doesn't exist, so revert to plain text
       else {
-<span class="cstat-no" title="statement not covered">        return attrs.original;</span>
+<span class="cstat-no" title="statement not covered" >        return attrs.original;</span>
       }
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
   }
 &nbsp;
   // convert all the children
-<span class="cstat-no" title="statement not covered">  i = 1;</span>
+<span class="cstat-no" title="statement not covered" >  i = 1;</span>
 &nbsp;
   // deal with the attribute node, if it exists
-<span class="cstat-no" title="statement not covered">  if ( attrs ) {</span>
+<span class="cstat-no" title="statement not covered" >  if ( attrs ) {</span>
     // if there are keys, skip over it
-<span class="cstat-no" title="statement not covered">    for ( var key in jsonml[ 1 ] ) {</span>
-<span class="cstat-no" title="statement not covered">        i = 2;</span>
-<span class="cstat-no" title="statement not covered">        break;</span>
+<span class="cstat-no" title="statement not covered" >    for ( var key in jsonml[ 1 ] ) {</span>
+<span class="cstat-no" title="statement not covered" >        i = 2;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
     }
     // if there aren't, remove it
-<span class="cstat-no" title="statement not covered">    if ( i === 1 ) {</span>
-<span class="cstat-no" title="statement not covered">      jsonml.splice( i, 1 );</span>
+<span class="cstat-no" title="statement not covered" >    if ( i === 1 ) {</span>
+<span class="cstat-no" title="statement not covered" >      jsonml.splice( i, 1 );</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for ( ; i &lt; jsonml.length; ++i ) {</span>
-<span class="cstat-no" title="statement not covered">    jsonml[ i ] = convert_tree_to_html( jsonml[ i ], references, options );</span>
+<span class="cstat-no" title="statement not covered" >  for ( ; i &lt; jsonml.length; ++i ) {</span>
+<span class="cstat-no" title="statement not covered" >    jsonml[ i ] = convert_tree_to_html( jsonml[ i ], references, options );</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return jsonml;</span>
+<span class="cstat-no" title="statement not covered" >  return jsonml;</span>
 }
 &nbsp;
 &nbsp;
 // merges adjacent text nodes into a single node
-<span class="fstat-no" title="function not covered">function merge_text_nodes( jsonml ) {</span>
+<span class="fstat-no" title="function not covered" >function merge_text_nodes( jsonml ) {</span>
   // skip the tag name and attribute hash
-<span class="cstat-no" title="statement not covered">  var i = extract_attr( jsonml ) ? 2 : 1;</span>
+<span class="cstat-no" title="statement not covered" >  var i = extract_attr( jsonml ) ? 2 : 1;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  while ( i &lt; jsonml.length ) {</span>
+<span class="cstat-no" title="statement not covered" >  while ( i &lt; jsonml.length ) {</span>
     // if it's a string check the next item too
-<span class="cstat-no" title="statement not covered">    if ( typeof jsonml[ i ] === "string" ) {</span>
-<span class="cstat-no" title="statement not covered">      if ( i + 1 &lt; jsonml.length &amp;&amp; typeof jsonml[ i + 1 ] === "string" ) {</span>
+<span class="cstat-no" title="statement not covered" >    if ( typeof jsonml[ i ] === "string" ) {</span>
+<span class="cstat-no" title="statement not covered" >      if ( i + 1 &lt; jsonml.length &amp;&amp; typeof jsonml[ i + 1 ] === "string" ) {</span>
         // merge the second string into the first and remove it
-<span class="cstat-no" title="statement not covered">        jsonml[ i ] += jsonml.splice( i + 1, 1 )[ 0 ];</span>
+<span class="cstat-no" title="statement not covered" >        jsonml[ i ] += jsonml.splice( i + 1, 1 )[ 0 ];</span>
       }
       else {
-<span class="cstat-no" title="statement not covered">        ++i;</span>
+<span class="cstat-no" title="statement not covered" >        ++i;</span>
       }
     }
     // if it's not a string recurse
     else {
-<span class="cstat-no" title="statement not covered">      merge_text_nodes( jsonml[ i ] );</span>
-<span class="cstat-no" title="statement not covered">      ++i;</span>
+<span class="cstat-no" title="statement not covered" >      merge_text_nodes( jsonml[ i ] );</span>
+<span class="cstat-no" title="statement not covered" >      ++i;</span>
     }
   }
 }
 &nbsp;
 } )( (function() {
-  <span class="missing-if-branch" title="if path not taken">I</span>if ( typeof exports === "undefined" ) {
-<span class="cstat-no" title="statement not covered">    window.markdown = {};</span>
-<span class="cstat-no" title="statement not covered">    return window.markdown;</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if ( typeof exports === "undefined" ) {
+<span class="cstat-no" title="statement not covered" >    window.markdown = {};</span>
+<span class="cstat-no" title="statement not covered" >    return window.markdown;</span>
   }
   else {
     return exports;
@@ -5391,11 +5393,10 @@ expose.renderJsonML = <span class="fstat-no" title="function not covered">functi
 } )() );
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 12:41:01 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 14:59:52 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
