@@ -1,4 +1,7 @@
-# test coverage for  [markdown (v0.5.0)](https://github.com/evilstreak/markdown-js#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-markdown.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-markdown) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-markdown.svg)](https://travis-ci.org/npmtest/node-npmtest-markdown)
+# npmtest-markdown
+
+#### basic test coverage for  [markdown (v0.5.0)](https://github.com/evilstreak/markdown-js#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-markdown.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-markdown) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-markdown.svg)](https://travis-ci.org/npmtest/node-npmtest-markdown)
+
 #### A sensible Markdown parser for javascript
 
 [![NPM](https://nodei.co/npm/markdown.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/markdown)
